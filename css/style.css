@@ -149,7 +149,7 @@ header ul li a:hover{
 .products{
     display: flex;
     position: relative;
-    background-image: url(./svg/redbackground.svg);
+    background-image: url(../svg/redbackground.svg);
     background-size: cover;
     width: 100%;
     padding: 100px;
