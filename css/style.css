@@ -1,0 +1,185 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700,800,900&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    box-sizing: border-box;
+    transition: 0.2s;
+}
+
+html{
+    scroll-behavior: smooth;
+    transition: 0.1s;
+}
+
+body{
+    width: 100%;
+    min-height: 1000px;
+    font-family: 'Poppins', sans-serif;
+}
+
+header{
+    position: sticky;
+    display: flex;
+    top: 0;
+    left: 0;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    z-index: 100;
+    background: white;
+    padding: 10px 40px;
+}
+
+
+
+header .logo{
+    position: relative;
+    font-size: 30px;
+    color: #ff5349;
+}
+
+header ul{
+    position: relative;
+    display: flex;
+    width: 100%;
+    justify-content: flex-end;
+    list-style-type: none;
+}
+
+header ul li{
+    position: relative;
+    margin: 0px 20px;
+}
+
+header ul li a{
+    position: relative;
+    color: black;
+    font-size: 16px;
+    text-decoration: none;
+}
+
+header ul li a:hover{
+    position: relative;
+    color: #ff5349;
+    cursor: pointer;
+}
+
+.sign-in, .sign-up{
+    padding: 5px 15px 5px 15px;
+    border: 1px solid #ff5349;
+    border-radius: 10px;
+    color: #ff5349;
+}
+
+.sign-in:hover, .sign-up:hover{
+    background: #ff5349;
+    color: white;
+    box-shadow: 0px 0px 10px 1px #ff5349;
+}
+
+.sticky {
+    position: sticky;
+    display: flex;
+    top: 0;
+    left: 0;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    z-index: 100;
+    background: white;
+    padding: 10px 40px;
+    box-shadow: 0px 0px 10px 1px rgba(0,0,0,0.1);
+}
+
+.banner{
+    position: relative;
+    min-height: 100vh;
+    transition: 0.5s;
+    width: 100%;
+}
+
+.banner-container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+}
+
+.banner-container img{
+    height: 600px;
+    width: 800px;
+}
+
+.banner .banner-container .banner-content{
+    display: flex;
+    position: relative;
+    padding: 30px;
+    background: #292c44;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.banner-content h2{
+    position: relative;
+    font-size: 50px;
+    color: white;
+}
+
+.banner-content h3{
+    position: relative;
+    font-size: 20px;
+   color: #f0f0f1;
+}
+
+.banner-content span{
+    color: #ff5349;
+    font-size: 30px;
+}
+
+.banner-content a{
+    margin-top: 20px;
+    text-align: center;
+    padding: 10px;
+    color: #ff5349;
+    text-decoration: none;
+    width: 200px;
+}
+
+.products{
+    display: flex;
+    position: relative;
+    background-image: url(/svg/redbackground.svg);
+    background-size: cover;
+    width: 100%;
+    padding: 100px;
+    justify-content: space-between;
+}
+
+.products .card{
+    display: flex;
+    padding: 30px;
+    flex-direction: column;
+    border-radius: 0px 100px 100px 100px;
+    position: relative;
+    background: linear-gradient(to right, #f0f0f1, #f1f1f0);
+    justify-content: center;
+    align-items: center;
+}
+
+.products .card:hover{
+    box-shadow: 0px 1px 20px 1px rgba(0,0,0,0.1);
+    background: linear-gradient(to right, #f1f1f0, white);
+}
+
+.products .card img{
+    height: 300px;
+    width: 300px;
+}
+
+.products .card h3,a{
+    text-decoration: none;
+    font-weight: 500;
+    color: #ff5349;
+    font-size: 20px;
+}
