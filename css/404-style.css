@@ -105,7 +105,7 @@ header ul li a:hover {
 
 #error {
     color: #ff5349;
-    font-size: 180px;
+    font-size: 11em;
     text-shadow: 1px 20px 10px rgba(255, 160, 160, 0.212);
 }
 
