@@ -94,6 +94,7 @@ header ul li a:hover {
     display: flex;
     position: relative;
     flex-direction: row-reverse;
+    justify-content: center;
 }
 
 .content {
