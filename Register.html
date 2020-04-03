@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BaketheCode - Register</title>
+    <meta name="Author" content="The Roushan" />
+    <meta name="Description" content="Online Platform for Learning new Programming Languages and Online Coding Practices." />
+    <meta name="Keywords" content="BaketheCode, bakethecode, Bakethecode, Online Coding Platform, Learn Coding Online, learn while code, earn while coding,
+        learn C++, C, Java, C++ Practice problems, c practice problems, java practice problems, python practice problems, how to earn money while coding,
+        best coding platform, best online coding platform, online coding compiler, online C++ compiler, online compilers for java, online compiler for python" />
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" type="text/css" href="css/hover.css" media="all">
+    <link rel="icon" href="/img/logo.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/7.13.1/firebase-app.js"></script>
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+    <script src="https://www.gstatic.com/firebasejs/7.13.1/firebase-analytics.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.13.1/firebase-auth.js"></script>
+    <script>
+        // Your web app's Firebase configuration
+        var firebaseConfig = {
+            apiKey: "AIzaSyAhqCG0zNjGhYKGLeEQfXMcdzbb8oHrRyE",
+            authDomain: "bakethecode.firebaseapp.com",
+            databaseURL: "https://bakethecode.firebaseio.com",
+            projectId: "bakethecode",
+            storageBucket: "bakethecode.appspot.com",
+            messagingSenderId: "500298729385",
+            appId: "1:500298729385:web:f976d794c09f415413a6b8",
+            measurementId: "G-2XX6K8LV35"
+        };
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+        firebase.analytics();
+    </script>
+    <script src="javascript/index.js"></script>
+    <!--Including Sweetalert2 framework in the web app-->
+    <script src="javascript/sweetalert/sweetalert2.min.js"></script>
+    <link rel="stylesheet" href="javascript/sweetalert/sweetalert2.min.css">
+</head>
+
+<body>
+    <div class="signup-container">
+        <div class="signup-header">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="Login.html" id="Login">Login</a></li>
+            </ul>
+        </div>
+        <div class="signup-form-container">
+            <div class="signup-content">
+                <h2>NEW ACCOUNT</h2>
+                <img src="img/logo.png" alt="">
+                <h3 id="welcome-status">Join Our Community</h3>
+            </div>
+            <div class="signup-form">
+                <div class="input">
+                    <img src="img/tie.png" alt=""><input type="email" id="email" placeholder="E-mail" required>
+                </div>
+                <div class="input">
+                    <img src="img/key.png" alt=""><input type="password" id="password" placeholder="Password" required>
+                </div>
+                <button class="signup" onclick="signup()">Creat My Account</button>
+                <div class="seperate-hr">
+                    <b class="hr "></b>
+                    <p>OR</p><b class="hr "></b>
+                </div>
+                <a href="Login.html" class="existing-user">Existing User, Login Here.</a>
+                <div class="design">
+                    <p>Made with <span>❤</span> by The Roushan</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="javascript/index.js"></script>
+</body>
+
+</html>

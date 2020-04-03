@@ -189,7 +189,8 @@
     }
     /* Login Page Designs *****************************/
     
-    .login-container {
+    .login-container,
+    .signup-container {
         min-height: 100vh;
         background: url(/svg/login-page.svg);
         background-size: cover;
@@ -198,12 +199,14 @@
         flex-direction: column;
     }
     
-    .login-header {
+    .login-header,
+    .signup-header {
         position: absolute;
         width: 100%;
     }
     
-    .login-header ul {
+    .login-header ul,
+    .signup-header ul {
         display: flex;
         list-style-type: none;
         justify-content: flex-end;
@@ -211,35 +214,41 @@
         align-items: center;
     }
     
-    .login-header ul li {
+    .login-header ul li,
+    .signup-header ul li {
         position: relative;
         padding: 20px;
     }
     
-    .login-header ul li a {
+    .login-header ul li a,
+    .signup-header ul li a {
         color: white;
         font-size: 1em;
         font-weight: 300;
     }
     
-    .login-header ul li a:hover {
+    .login-header ul li a:hover,
+    .signup-header ul li a:hover {
         color: #ff5349;
     }
     
-    #register {
+    #Register,
+    #Login {
         display: block;
         padding: 10px 20px;
         border: 1px solid #18cdca;
         border-radius: 10px;
     }
     
-    #register:hover {
+    #Register:hover,
+    #Login:hover {
         background: #ff5349;
         border: 1px solid #ff5349;
         color: white;
     }
     
-    .login-form-container {
+    .login-form-container,
+    .signup-form-container {
         background: url(/svg/login-box-svg.svg) center;
         display: flex;
         background-size: cover;
@@ -252,7 +261,8 @@
         border-radius: 20px;
     }
     
-    .login-content {
+    .login-content,
+    .signup-content {
         display: flex;
         position: relative;
         flex-direction: column;
@@ -260,46 +270,53 @@
         top: -70px;
     }
     
-    .login-form-container h2 {
+    .login-form-container h2,
+    .signup-form-container h2 {
         color: white;
         font-size: 40px;
         position: relative;
     }
     
-    .login-form-container img {
+    .login-form-container img,
+    .signup-form-container img {
         position: relative;
         height: 100px;
         width: 100px;
     }
     
-    .login-form-container h1 {
-        font-size: 35px;
+    .login-form-container h1,
+    .signup-form-container h1 {
+        font-size: 30px;
         position: relative;
         color: #4ce9ac;
     }
     
-    .login-form-container h3 {
+    .login-form-container h3,
+    .signup-form-container h3 {
         color: #4f80e1;
         position: relative;
         font-size: 25px;
         font-weight: 600;
     }
     
-    .login-form {
+    .login-form,
+    .signup-form {
         display: flex;
         position: relative;
         flex-direction: column;
         top: -40px;
     }
     
-    .login-form .input {
+    .login-form .input,
+    .signup-form .input {
         margin-top: 20px;
         position: relative;
         display: flex;
         align-items: center;
     }
     
-    .login-form .input input {
+    .login-form .input input,
+    .signup-form .input input {
         border: none;
         width: 88%;
         padding: 5px;
@@ -307,16 +324,19 @@
         border-width: 0px;
     }
     
-    .login-form .input input::placeholder {
+    .login-form .input input::placeholder,
+    .signup-form .input input::placeholder {
         color: rgba(0, 0, 0, 0.2);
     }
     
-    .login-form .input img {
+    .login-form .input img,
+    .signup-form .input img {
         height: 30px;
         width: 30px;
         padding: 5px;
         background: #4f80e1;
     }
+    /* For login.html page */
     
     #forgot-password {
         display: flex;
@@ -337,7 +357,18 @@
         outline: none;
     }
     
-    .login-form .login:hover {
+    .signup-form .signup {
+        background: #4ce9ac;
+        border: none;
+        margin-top: 20px;
+        padding: 8px;
+        color: white;
+        font-size: 16px;
+        outline: none;
+    }
+    
+    .login-form .login:hover,
+    .signup-form .signup:hover {
         background: #4f80e1;
     }
     
@@ -360,7 +391,8 @@
         height: 1px;
     }
     
-    .login-form .create-account {
+    .login-form .create-account,
+    .signup-form .existing-user {
         font-size: 13px;
         text-align: center;
         margin: 10px;

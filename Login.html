@@ -14,6 +14,32 @@
     <link rel="stylesheet" type="text/css" href="css/hover.css" media="all">
     <link rel="icon" href="/img/logo.png">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/7.13.1/firebase-app.js"></script>
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+    <script src="https://www.gstatic.com/firebasejs/7.13.1/firebase-analytics.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.13.1/firebase-auth.js"></script>
+    <script>
+        // Your web app's Firebase configuration
+        var firebaseConfig = {
+            apiKey: "AIzaSyAhqCG0zNjGhYKGLeEQfXMcdzbb8oHrRyE",
+            authDomain: "bakethecode.firebaseapp.com",
+            databaseURL: "https://bakethecode.firebaseio.com",
+            projectId: "bakethecode",
+            storageBucket: "bakethecode.appspot.com",
+            messagingSenderId: "500298729385",
+            appId: "1:500298729385:web:f976d794c09f415413a6b8",
+            measurementId: "G-2XX6K8LV35"
+        };
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+        firebase.analytics();
+    </script>
+    <script src="javascript/index.js"></script>
+    <!--Including Sweetalert2 framework in the web app-->
+    <script src="javascript/sweetalert/sweetalert2.min.js"></script>
+    <link rel="stylesheet" href="javascript/sweetalert/sweetalert2.min.css">
 </head>
 
 <body>
@@ -21,7 +47,7 @@
         <div class="login-header">
             <ul>
                 <li><a href="index.html">Home</a></li>
-                <li><a href="Register.html" id="register">Register</a></li>
+                <li><a href="Register.html" id="Register">Register</a></li>
             </ul>
         </div>
         <div class="login-form-container">
@@ -50,29 +76,8 @@
             </div>
         </div>
     </div>
-    <!-- The core Firebase JS SDK is always required and must be listed first -->
-    <script src="https://www.gstatic.com/firebasejs/7.13.1/firebase-app.js"></script>
-    <!-- TODO: Add SDKs for Firebase products that you want to use
-     https://firebase.google.com/docs/web/setup#available-libraries -->
-    <script src="https://www.gstatic.com/firebasejs/7.13.1/firebase-analytics.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/7.13.1/firebase-auth.js"></script>
-    <script>
-        // Your web app's Firebase configuration
-        var firebaseConfig = {
-            apiKey: "AIzaSyAhqCG0zNjGhYKGLeEQfXMcdzbb8oHrRyE",
-            authDomain: "bakethecode.firebaseapp.com",
-            databaseURL: "https://bakethecode.firebaseio.com",
-            projectId: "bakethecode",
-            storageBucket: "bakethecode.appspot.com",
-            messagingSenderId: "500298729385",
-            appId: "1:500298729385:web:f976d794c09f415413a6b8",
-            measurementId: "G-2XX6K8LV35"
-        };
-        // Initialize Firebase
-        firebase.initializeApp(firebaseConfig);
-        firebase.analytics();
-    </script>
-    <script src="javascript/index.js"></script>
+
+
 </body>
 
 </html>
