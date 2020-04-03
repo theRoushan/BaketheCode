@@ -5,9 +5,6 @@ function redirect_to_homepage() {
 firebase.auth().onAuthStateChanged(function(user) {
     if (user) {
         // User is signed in.
-        document.getElementById("sign-in").style({ display: none });
-        document.getElementById("sign-up").style({ display: none });
-
         var user = firebase.auth().currentUser;
 
         if (user != null) {
