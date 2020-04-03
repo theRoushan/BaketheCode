@@ -64,7 +64,8 @@
     }
     
     .sign-in,
-    .sign-up {
+    .sign-up,
+    .logout {
         padding: 5px 15px 5px 15px;
         border: 1px solid #ff5349;
         border-radius: 10px;
