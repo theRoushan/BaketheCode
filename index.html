@@ -40,9 +40,15 @@
                 // User is signed in.
                 document.getElementById("sign-in").style.cssText = "display: none; margin:0; padding:0";
                 document.getElementById("sign-up").style.cssText = "display: none; margin:0; padding:0";
+
+                var tag = document.createElement("li");
+                tag.innerHTML = '<a href="" onclick="logout()">Logout</a></li>'
+                var element = document.getElementById("nav");
+                element.appendChild(tag);
             }
         });
     </script>
+    <script src="javascript/index.js"></script>
     <!--Including Sweetalert2 framework in the web app-->
     <script src="javascript/sweetalert/sweetalert2.min.js"></script>
     <link rel="stylesheet" href="javascript/sweetalert/sweetalert2.min.css">
@@ -55,7 +61,7 @@
 
         </div>
         <h2 class="logo hvr-grow">BaketheCode</h2>
-        <ul>
+        <ul id="nav">
             <li><a href="">Home</a></li>
             <li><a href="">Practice</a></li>
             <li><a href="">Contests</a></li>
@@ -63,7 +69,7 @@
             <li id="sign-up"><a href="Register.html" class="sign-up">Sign Up</a></li>
         </ul>
     </header>
-    <!--Banner-->
+    <!------Banner-->
     <section class="banner">
         <div class="banner-container">
             <img src="./svg/undraw_new_decade_n4qd.svg" alt="">

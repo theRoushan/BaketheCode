@@ -2,32 +2,35 @@ function redirect_to_homepage() {
     location.replace("index.html")
 };
 
-firebase.auth().onAuthStateChanged(function(user) {
-    if (user) {
-        // User is signed in.
-        var user = firebase.auth().currentUser;
+function checkAuthentication() {
+    firebase.auth().onAuthStateChanged(function(user) {
+        console.log('checkAuthentication() loaded successfully.');
+        if (user) {
+            // User is signed in.
+            var user = firebase.auth().currentUser;
 
-        if (user != null) {
-            var email_id = user.email;
-            Swal.fire({
-                    position: 'top-end',
-                    title: "Welcome User : " + email_id,
-                    showConfirmButton: false,
-                    timer: 1500,
-                    width: 300,
-                    height: 30
-                })
-                //redirects the user to haomepage if the user is already loggedin.
-            redirect_to_homepage();
+            if (user != null) {
+                var email_id = user.email;
+                Swal.fire({
+                        position: 'top-end',
+                        title: "Welcome User : " + email_id,
+                        showConfirmButton: false,
+                        timer: 1500,
+                        width: 300,
+                        height: 30
+                    })
+                    //redirects the user to haomepage if the user is already loggedin.
+                redirect_to_homepage();
+            }
+
+        } else {
+            // No user is signed in.
+
+
+
         }
-
-    } else {
-        // No user is signed in.
-
-
-
-    }
-});
+    });
+}
 
 function login() {
 
