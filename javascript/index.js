@@ -1,6 +1,6 @@
 function redirect_to_homepage() {
     location.replace("index.html")
-}
+};
 
 
 function signup() {
@@ -56,8 +56,7 @@ function login() {
 
 function resetPassword() {
     var auth = firebase.auth();
-    var emailAddress = "user@example.com";
-
+    var emailAddress = email;
     auth.sendPasswordResetEmail(emailAddress).then(function() {
         // Email sent.
     }).catch(function(error) {
