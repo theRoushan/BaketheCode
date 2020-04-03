@@ -30,6 +30,34 @@
         background: white;
         padding: 10px 40px;
     }
+    /*Animations used  for BaketheCode Logo Loading while Loading User*/
+    
+    .slide-fwd-center {
+        -webkit-animation: slide-fwd-center 0.8s cubic-bezier(0.250, 0.460, 0.450, 0.940) infinite alternate;
+        animation: slide-fwd-center 0.8s cubic-bezier(0.250, 0.460, 0.450, 0.940) infinite alternate;
+    }
+    
+    @-webkit-keyframes slide-fwd-center {
+        0% {
+            -webkit-transform: translateZ(0);
+            transform: translateZ(0);
+        }
+        100% {
+            -webkit-transform: translateZ(160px);
+            transform: translateZ(160px);
+        }
+    }
+    
+    @keyframes slide-fwd-center {
+        0% {
+            -webkit-transform: translateZ(0);
+            transform: translateZ(0);
+        }
+        100% {
+            -webkit-transform: translateZ(160px);
+            transform: translateZ(160px);
+        }
+    }
     
     header .logo {
         position: relative;
@@ -73,7 +101,8 @@
     }
     
     .sign-in:hover,
-    .sign-up:hover {
+    .sign-up:hover,
+    .logout:hover {
         background: #ff5349;
         color: white;
         box-shadow: 0px 0px 10px 1px #ff5349;

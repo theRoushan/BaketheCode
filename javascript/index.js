@@ -1,6 +1,11 @@
 function redirect_to_homepage() {
     location.replace("index.html")
-};
+}
+
+
+function signup() {
+
+}
 
 function checkAuthentication() {
     firebase.auth().onAuthStateChanged(function(user) {
@@ -49,21 +54,25 @@ function login() {
 
 }
 
-function signup() {
+function resetPassword() {
+    var auth = firebase.auth();
+    var emailAddress = "user@example.com";
 
-}
-
-function create_account() {
-
-
-    firebase.auth().createUserWithEmailAndPassword(userEmail, userPass).catch(function(error) {
-        // Handle Errors here.
-        var errorCode = error.code;
-        var errorMessage = error.message;
-        // ...
+    auth.sendPasswordResetEmail(emailAddress).then(function() {
+        // Email sent.
+    }).catch(function(error) {
+        // An error happened.
     });
 }
 
 function logout() {
     firebase.auth().signOut();
+    Swal.fire({
+        position: 'top-end',
+        title: 'Logged Out. Successfully.',
+        showConfirmButton: false,
+        timer: 1500,
+        width: 300,
+        height: 30
+    })
 }
