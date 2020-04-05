@@ -18,9 +18,9 @@
         font-family: 'Poppins', sans-serif;
     }
     
-    header {
+    #header,
+    #logged-header {
         position: sticky;
-        display: flex;
         top: 0;
         left: 0;
         align-items: center;
@@ -29,6 +29,14 @@
         z-index: 100;
         background: white;
         padding: 10px 40px;
+    }
+    
+    #header {
+        display: flex;
+    }
+    
+    #logged-header {
+        display: none
     }
     /*Animations used  for BaketheCode Logo Loading while Loading User*/
     
@@ -59,13 +67,15 @@
         }
     }
     
-    header .logo {
+    #header .logo,
+    #logged-header .logo {
         position: relative;
         font-size: 30px;
         color: #ff5349;
     }
     
-    header ul {
+    #header ul,
+    #logged-header ul {
         position: relative;
         display: flex;
         width: 100%;
@@ -73,36 +83,41 @@
         list-style-type: none;
     }
     
-    header ul li {
+    #header ul li,
+    #logged-header ul li {
         position: relative;
         margin: 0px 20px;
     }
     
-    header ul li a {
+    #header ul li a,
+    #logged-header ul li a {
         position: relative;
         color: black;
         font-size: 16px;
         text-decoration: none;
     }
     
-    header ul li a:hover {
+    #header ul li a:hover,
+    #logged-header ul li a:hover {
         position: relative;
         color: #ff5349;
         cursor: pointer;
     }
     
-    .sign-in,
+    #header .sign-in,
+    #header .sign-up,
     .sign-up,
-    .logout {
+    #logged-header .logout {
         padding: 5px 15px 5px 15px;
         border: 1px solid #ff5349;
         border-radius: 10px;
         color: #ff5349;
     }
     
-    .sign-in:hover,
+    #header .sign-in:hover,
+    #header .sign-up:hover,
     .sign-up:hover,
-    .logout:hover {
+    #logged-header .logout:hover {
         background: #ff5349;
         color: white;
         box-shadow: 0px 0px 10px 1px #ff5349;

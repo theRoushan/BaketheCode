@@ -38,17 +38,14 @@
         firebase.auth().onAuthStateChanged(function(user) {
             if (user) {
                 // User is signed in.
-                document.getElementById("sign-in").style.cssText = "display: none; margin:0; padding:0";
-                document.getElementById("sign-up").style.cssText = "display: none; margin:0; padding:0";
-
-                var tag = document.createElement("li");
-                tag.innerHTML = '<a href="" onclick="logout()" class="logout">Logout</a></li>'
-                var element = document.getElementById("nav");
-                element.appendChild(tag);
+                document.getElementById("header").style.cssText = "display: none";
+                document.getElementById("logged-header").style.cssText = "display: flex";
+            } else {
+                document.getElementById("logged-header").style.cssText = "display: none";
+                document.getElementById("header").style.cssText = "display: flex";
             }
         });
     </script>
-    <script src="javascript/index.js"></script>
     <!--Including Sweetalert2 framework in the web app-->
     <script src="javascript/sweetalert/sweetalert2.min.js"></script>
     <link rel="stylesheet" href="javascript/sweetalert/sweetalert2.min.css">
@@ -65,8 +62,19 @@
             <li><a href="">Home</a></li>
             <li><a href="">Practice</a></li>
             <li><a href="">Contests</a></li>
-            <li id="sign-in"><a href="Login.html" class="sign-in">Sign In</a></li>
-            <li id="sign-up"><a href="Register.html" class="sign-up">Sign Up</a></li>
+            <li><a href="Login.html" class="sign-in">Sign In</a></li>
+            <li><a href="Register.html" class="sign-up">Sign Up</a></li>
+        </ul>
+    </header>
+    <header id="logged-header">
+        <div class="offers">
+        </div>
+        <h2 class="logo hvr-grow">BaketheCode</h2>
+        <ul id="nav">
+            <li><a href="">Home</a></li>
+            <li><a href="">Practice</a></li>
+            <li><a href="">Contests</a></li>
+            <li><a href="" onclick="logout()" class="logout">Logout</a></li>
         </ul>
     </header>
     <!------Banner-->
@@ -119,7 +127,7 @@
 
         // Get the header
         var header = document.getElementById("header");
-
+        var loggedheader = document.getElementById("logged-header");
         // Get the offset position of the navbar
         var sticky = header.offsetTop;
 
@@ -127,11 +135,14 @@
         function myFunction() {
             if (window.pageYOffset > sticky) {
                 header.classList.add("sticky");
+                loggedheader.classList.add("sticky");
             } else {
                 header.classList.remove("sticky");
+                loggedheader.classList.remove("sticky");
             }
         }
     </script>
+    <script src="javascript/index.js"></script>
 </body>
 
 </html>

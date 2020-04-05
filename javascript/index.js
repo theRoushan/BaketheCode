@@ -1,11 +1,9 @@
+var isLogged;
+
 function redirect_to_homepage() {
     location.replace("index.html")
 };
 
-
-function signup() {
-
-}
 
 function checkAuthentication() {
     firebase.auth().onAuthStateChanged(function(user) {
