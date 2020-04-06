@@ -21,6 +21,22 @@
     <script src="https://www.gstatic.com/firebasejs/7.13.1/firebase-analytics.js"></script>
     <script src="https://www.gstatic.com/firebasejs/7.13.1/firebase-auth.js"></script>
     <script>
+        function checkLogin() {
+            firebase.auth().onAuthStateChanged(function(user) {
+                if (user) {
+                    // User is signed in.
+                    console.log("User is already logged in.");
+                    document.getElementById("header").style.cssText = "display: none";
+                    document.getElementById("logged-header").style.cssText = "display: flex";
+                } else {
+                    console.log("User is not logged in.");
+                    document.getElementById("logged-header").style.cssText = "display: none";
+                    document.getElementById("header").style.cssText = "display: flex";
+                }
+            });
+        }
+    </script>
+    <script>
         // Your web app's Firebase configuration
         var firebaseConfig = {
             apiKey: "AIzaSyAhqCG0zNjGhYKGLeEQfXMcdzbb8oHrRyE",
@@ -35,16 +51,7 @@
         // Initialize Firebase
         firebase.initializeApp(firebaseConfig);
         firebase.analytics();
-        firebase.auth().onAuthStateChanged(function(user) {
-            if (user) {
-                // User is signed in.
-                document.getElementById("header").style.cssText = "display: none";
-                document.getElementById("logged-header").style.cssText = "display: flex";
-            } else {
-                document.getElementById("logged-header").style.cssText = "display: none";
-                document.getElementById("header").style.cssText = "display: flex";
-            }
-        });
+        checkLogin();
     </script>
     <!--Including Sweetalert2 framework in the web app-->
     <script src="javascript/sweetalert/sweetalert2.min.js"></script>
@@ -53,7 +60,6 @@
 
 <body>
     <!--Header-->
-    <div class="loader"></div>
     <header id="header">
         <div class="offers">
         </div>
@@ -143,6 +149,7 @@
         }
     </script>
     <script src="javascript/index.js"></script>
+
 </body>
 
 </html>
