@@ -32,7 +32,7 @@
     }
     
     #header {
-        display: flex;
+        display: none;
     }
     
     #logged-header {
