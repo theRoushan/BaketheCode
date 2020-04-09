@@ -1,7 +1,7 @@
 var isLogged; //variable to chcek if the user is logged
 
 function redirect_to_homepage() {
-    location.replace("index.html")
+    location.replace("practice.html")
 };
 
 

@@ -28,15 +28,21 @@
         padding: 10px 40px;
         display: flex;
         align-items: center;
+        height: 70px;
+        justify-content: space-between;
     }
     
     #header ul {
         position: relative;
         display: flex;
-        width: 100%;
-        justify-content: flex-end;
         list-style-type: none;
+    }
+    
+    #nav {
+        justify-content: flex-start;
         align-items: center;
+        margin-left: 50px;
+        width: 100%;
     }
     
     #header ul li {
@@ -83,17 +89,33 @@
     }
     
     .sticky {
-        position: sticky;
-        display: flex;
-        top: 0;
-        left: 0;
         align-items: center;
-        justify-content: space-between;
         width: 100%;
         z-index: 100;
         background: white;
         padding: 10px 40px;
         box-shadow: 0px 0px 10px 1px rgba(0, 0, 0, 0.1);
+    }
+    /*authentication state links */
+    
+    #authentication-state-links {
+        flex-direction: row-reverse;
+        width: 50%;
+    }
+    
+    #user-avatar {
+        background: rgba(248, 248, 248, 0.774);
+        border-radius: 10px;
+        display: none;
+        position: static;
+        flex-direction: row;
+        align-items: center;
+        z-index: 900;
+        padding: 5px;
+    }
+    
+    #user-avatar #username {
+        margin: 0px 5px 0px 10px;
     }
     
     .banner {
@@ -187,10 +209,6 @@
         font-weight: 500;
         color: #ff5349;
         font-size: 20px;
-    }
-    
-    .footer {
-        background-color: #292c44;
     }
     /* Login Page Designs *****************************/
     /*Login Page as .login and signup page as .signup*/

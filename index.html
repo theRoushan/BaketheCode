@@ -10,9 +10,6 @@
     <meta name="Keywords" content="BaketheCode, bakethecode, Bakethecode, Online Coding Platform, Learn Coding Online, learn while code, earn while coding,
         learn C++, C, Java, C++ Practice problems, c practice problems, java practice problems, python practice problems, how to earn money while coding,
         best coding platform, best online coding platform, online coding compiler, online C++ compiler, online compilers for java, online compiler for python" />
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" type="text/css" href="css/hover.css" media="all">
-    <link rel="icon" href="/img/logo.png">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <!-- The core Firebase JS SDK is always required and must be listed first -->
     <script src="https://www.gstatic.com/firebasejs/7.13.1/firebase-app.js"></script>
@@ -29,11 +26,13 @@
                     document.getElementById("sign-in-link").style.cssText = "display: none";
                     document.getElementById("sign-up-link").style.cssText = "display: none";
                     document.getElementById("logout-link").style.cssText = "display: flex";
+                    document.getElementById("user-avatar").style.cssText = "display: flex";
                 } else {
                     console.log("User is not logged in.");
                     document.getElementById("sign-in-link").style.cssText = "display: flex";
                     document.getElementById("sign-up-link").style.cssText = "display: flex";
                     document.getElementById("logout-link").style.cssText = "display: none";
+                    document.getElementById("user-avatar").style.cssText = "display: none";
                 }
             });
         }
@@ -55,6 +54,9 @@
         firebase.analytics();
         checkLogin();
     </script>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" type="text/css" href="css/hover.css" media="all">
+    <link rel="icon" href="/img/logo.png">
     <!--Including Sweetalert2 framework in the web app-->
     <script src="javascript/sweetalert/sweetalert2.min.js"></script>
     <link rel="stylesheet" href="javascript/sweetalert/sweetalert2.min.css">
@@ -66,18 +68,24 @@
         <div class="offers">
         </div>
         <img src="img/logo - red.png" alt="" class="logo hvr-grow" height="50px" width="50px">
+        <h2 id="logo-text" style="color: red; padding-left: 5px;">BaketheCode</h2>
         <ul id="nav">
-            <li><a href="">Home</a></li>
-            <li><a href="">Practice</a></li>
-            <li><a href="">Contests</a></li>
+            <li class="logo hvr-grow"><a href="index.html" style="color: red;">Home</a></li>
+            <li class="logo hvr-grow"><a href="practice.html">Practice</a></li>
+            <li class="logo hvr-grow"><a href="contests.html">Contests</a></li>
+        </ul>
+        <ul id="authentication-state-links">
             <li id="sign-in-link"><a href="Login.html" class="sign-in">Sign In</a></li>
             <li id="sign-up-link"><a href="Register.html" class="sign-up">Sign Up</a></li>
             <li id="logout-link"><a href="" onclick="logout()" class="logout">Logout</a></li>
+            <a href="" class="user-avatar-link">
+                <div id="user-avatar">
+                    <img src="img/logo - red.png" alt="" id="avatar" height="32px" width="32px">
+                    <h5 id="username">username</h5>
+                    <i class="fa fa-angle-down"></i>
+                </div>
+            </a>
         </ul>
-        <div class="user-avatar">
-            <img src="img/logo - red.png" alt="" id="avatar" height="32px" width="32px">
-            <h5 id="username">username</h5>
-        </div>
     </header>
     <!------Banner-->
     <section class="banner">
