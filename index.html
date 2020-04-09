@@ -26,12 +26,14 @@
                 if (user) {
                     // User is signed in.
                     console.log("User is already logged in.");
-                    document.getElementById("header").style.cssText = "display: none";
-                    document.getElementById("logged-header").style.cssText = "display: flex";
+                    document.getElementById("sign-in-link").style.cssText = "display: none";
+                    document.getElementById("sign-up-link").style.cssText = "display: none";
+                    document.getElementById("logout-link").style.cssText = "display: flex";
                 } else {
                     console.log("User is not logged in.");
-                    document.getElementById("logged-header").style.cssText = "display: none";
-                    document.getElementById("header").style.cssText = "display: flex";
+                    document.getElementById("sign-in-link").style.cssText = "display: flex";
+                    document.getElementById("sign-up-link").style.cssText = "display: flex";
+                    document.getElementById("logout-link").style.cssText = "display: none";
                 }
             });
         }
@@ -63,28 +65,32 @@
     <header id="header">
         <div class="offers">
         </div>
-        <h2 class="logo hvr-grow">BaketheCode</h2>
+        <img src="img/logo - red.png" alt="" class="logo hvr-grow" height="50px" width="50px">
         <ul id="nav">
             <li><a href="">Home</a></li>
             <li><a href="">Practice</a></li>
             <li><a href="">Contests</a></li>
-            <li><a href="Login.html" class="sign-in">Sign In</a></li>
-            <li><a href="Register.html" class="sign-up">Sign Up</a></li>
+            <li id="sign-in-link"><a href="Login.html" class="sign-in">Sign In</a></li>
+            <li id="sign-up-link"><a href="Register.html" class="sign-up">Sign Up</a></li>
+            <li id="logout-link"><a href="" onclick="logout()" class="logout">Logout</a></li>
         </ul>
-    </header>
-    <header id="logged-header">
-        <div class="offers">
+        <div class="user-avatar">
+            <img src="img/logo - red.png" alt="" id="avatar" height="32px" width="32px">
+            <h5 id="username">username</h5>
         </div>
-        <h2 class="logo hvr-grow">BaketheCode</h2>
-        <ul id="nav">
-            <li><a href="">Home</a></li>
-            <li><a href="">Practice</a></li>
-            <li><a href="">Contests</a></li>
-            <li><a href="" onclick="logout()" class="logout">Logout</a></li>
-        </ul>
     </header>
     <!------Banner-->
     <section class="banner">
+        <div class="banner-container">
+            <img src="./svg/undraw_new_decade_n4qd.svg" alt="">
+            <div class="banner-content">
+                <h2>Want to Earn while Coding.</h2>
+                <h3>Join our Community of <span class="hvr-wobble-vertical">100+</span> Developers.</h3>
+                <a href="Register.html" class="sign-up hvr-grow">Join Our Team</a>
+            </div>
+        </div>
+    </section>
+    <section class="banner-logged">
         <div class="banner-container">
             <img src="./svg/undraw_new_decade_n4qd.svg" alt="">
             <div class="banner-content">
@@ -141,10 +147,9 @@
         function myFunction() {
             if (window.pageYOffset > sticky) {
                 header.classList.add("sticky");
-                loggedheader.classList.add("sticky");
+
             } else {
                 header.classList.remove("sticky");
-                loggedheader.classList.remove("sticky");
             }
         }
     </script>

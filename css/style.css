@@ -18,87 +18,40 @@
         font-family: 'Poppins', sans-serif;
     }
     
-    #header,
-    #logged-header {
+    #header {
         position: sticky;
         top: 0;
         left: 0;
-        align-items: center;
-        justify-content: space-between;
         width: 100%;
         z-index: 100;
         background: white;
         padding: 10px 40px;
+        display: flex;
+        align-items: center;
     }
     
-    #header {
-        display: none;
-    }
-    
-    #logged-header {
-        display: none
-    }
-    /*Animations used  for BaketheCode Logo Loading while Loading User*/
-    
-    .slide-fwd-center {
-        -webkit-animation: slide-fwd-center 0.8s cubic-bezier(0.250, 0.460, 0.450, 0.940) infinite alternate;
-        animation: slide-fwd-center 0.8s cubic-bezier(0.250, 0.460, 0.450, 0.940) infinite alternate;
-    }
-    
-    @-webkit-keyframes slide-fwd-center {
-        0% {
-            -webkit-transform: translateZ(0);
-            transform: translateZ(0);
-        }
-        100% {
-            -webkit-transform: translateZ(160px);
-            transform: translateZ(160px);
-        }
-    }
-    
-    @keyframes slide-fwd-center {
-        0% {
-            -webkit-transform: translateZ(0);
-            transform: translateZ(0);
-        }
-        100% {
-            -webkit-transform: translateZ(160px);
-            transform: translateZ(160px);
-        }
-    }
-    
-    #header .logo,
-    #logged-header .logo {
-        position: relative;
-        font-size: 30px;
-        color: #ff5349;
-    }
-    
-    #header ul,
-    #logged-header ul {
+    #header ul {
         position: relative;
         display: flex;
         width: 100%;
         justify-content: flex-end;
         list-style-type: none;
+        align-items: center;
     }
     
-    #header ul li,
-    #logged-header ul li {
+    #header ul li {
         position: relative;
         margin: 0px 20px;
     }
     
-    #header ul li a,
-    #logged-header ul li a {
+    #header ul li a {
         position: relative;
         color: black;
         font-size: 16px;
         text-decoration: none;
     }
     
-    #header ul li a:hover,
-    #logged-header ul li a:hover {
+    #header ul li a:hover {
         position: relative;
         color: #ff5349;
         cursor: pointer;
@@ -107,7 +60,7 @@
     #header .sign-in,
     #header .sign-up,
     .sign-up,
-    #logged-header .logout {
+    #header .logout {
         padding: 5px 15px 5px 15px;
         border: 1px solid #ff5349;
         border-radius: 10px;
@@ -117,10 +70,16 @@
     #header .sign-in:hover,
     #header .sign-up:hover,
     .sign-up:hover,
-    #logged-header .logout:hover {
+    #header .logout:hover {
         background: #ff5349;
         color: white;
         box-shadow: 0px 0px 10px 1px #ff5349;
+    }
+    
+    #sign-in-link,
+    #sign-up-link,
+    #logout-link {
+        display: none;
     }
     
     .sticky {
@@ -234,15 +193,65 @@
         background-color: #292c44;
     }
     /* Login Page Designs *****************************/
+    /*Login Page as .login and signup page as .signup*/
     
-    .login-container,
-    .signup-container {
+    .login-container {
         min-height: 100vh;
         background: url(/svg/login-page.svg);
         background-size: cover;
         position: relative;
         display: flex;
         flex-direction: column;
+    }
+    
+    .main-container {
+        display: absolute;
+    }
+    
+    .bg {
+        animation: slide 3s ease-in-out infinite alternate;
+        background-image: linear-gradient(-60deg, #18cdca 50%, #4f80e1 50%);
+        bottom: 0;
+        left: -50%;
+        opacity: .5;
+        position: fixed;
+        right: -50%;
+        top: 0;
+        z-index: -1;
+    }
+    
+    .bg2 {
+        animation-direction: alternate-reverse;
+        animation-duration: 4s;
+    }
+    
+    .bg3 {
+        animation-duration: 5s;
+    }
+    
+    @keyframes slide {
+        0% {
+            transform: translateX(-25%);
+        }
+        100% {
+            transform: translateX(25%);
+        }
+    }
+    
+    .signup-container {
+        min-height: 100vh;
+        position: relative;
+        display: flex;
+        flex-direction: column;
+    }
+    
+    @keyframes bg-pan-left {
+        0% {
+            background-position: 100% 50%
+        }
+        100% {
+            background-position: 0 50%
+        }
     }
     
     .login-header,
@@ -282,15 +291,15 @@
     #Login {
         display: block;
         padding: 10px 20px;
-        border: 1px solid #18cdca;
+        border: 1px solid #18c;
         border-radius: 10px;
     }
     
     #Register:hover,
     #Login:hover {
-        background: #ff5349;
-        border: 1px solid #ff5349;
+        background: #4f80e1;
         color: white;
+        border: 1px solid #4f80e1;
     }
     
     .login-form-container,
@@ -455,3 +464,6 @@
     .design span {
         color: red;
     }
+    /**********Media Queries for Multiple Device support and Resonsive website */
+    
+    @media only screen and (max-width: 600px) {}
