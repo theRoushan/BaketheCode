@@ -56,6 +56,24 @@ function login() {
 
 }
 
+function signup() {
+    var userEmail = document.getElementById("email").value;
+    var userPass = document.getElementById("password").value;
+    var confirm_userPass = document.getElementById("confirm-password").value;
+
+    if (userPass == confirm_userPass) {
+        firebase.auth().createUserWithEmailAndPassword(userEmail, userPass).catch(function(error) {
+            // Handle Errors here.
+            var errorCode = error.code;
+            var errorMessage = error.message;
+            alert(errorMessage);
+            // ...
+        });
+    } else
+        alert("Both Password donot match. Try Again.")
+
+}
+
 function resetPassword() {
     var auth = firebase.auth();
     var emailAddress = document.getElementById("resetEmail").value;
