@@ -1,6 +1,6 @@
 # BaketheCode
 ![](img/small-logo.png)
->>>>>>> 397c1bc8c624a31dcaec669552453f458d335162
+>>
 BaketheCode is an online Coding Platform which offers Students to earn money while learning and practicing Coding. This can be achieved through our regular online Coding Competitions and Challanges on daily Basis.
 
 To View the Website visit : https://bakethecode.me
