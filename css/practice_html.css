@@ -335,6 +335,8 @@ Author : The Roushan */
     padding: 50px;
     width: 30%;
     font-size: 14px;
+    right: 0px;
+    position: fixed;
 }
 
 .code-library-container .code-library-sidebar .status {
