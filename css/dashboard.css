@@ -1,0 +1,231 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700,800,900&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    box-sizing: border-box;
+    transition: 0.2s;
+}
+
+html {
+    scroll-behavior: smooth;
+    transition: 0.1s;
+}
+
+body {
+    width: 100%;
+    min-height: 100vh;
+    font-family: 'Poppins', sans-serif;
+    background: #f0f1f0;
+}
+
+#header {
+    position: sticky;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 100;
+    background: white;
+    padding: 10px 40px;
+    display: flex;
+    align-items: center;
+    height: 70px;
+    justify-content: space-between;
+    box-shadow: 0px 0px 10px 1px rgba(0, 0, 0, 0.1);
+}
+
+#header ul {
+    position: relative;
+    display: flex;
+    list-style-type: none;
+}
+
+#nav {
+    justify-content: flex-start;
+    align-items: center;
+    margin-left: 50px;
+    width: 100%;
+}
+
+#header ul li {
+    position: relative;
+    margin: 0px 20px;
+}
+
+#header ul li a {
+    position: relative;
+    color: black;
+    font-size: 15px;
+    font-weight: 500;
+    text-decoration: none;
+}
+
+#header ul li a:hover {
+    position: relative;
+    color: #ff5349;
+    cursor: pointer;
+}
+
+#header .sign-in,
+#header .sign-up,
+.sign-up,
+#header .logout {
+    padding: 5px 15px 5px 15px;
+    border: 1px solid #ff5349;
+    border-radius: 10px;
+    color: #ff5349;
+    display: flex;
+    align-items: center;
+}
+
+#header .sign-in:hover,
+#header .sign-up:hover,
+.sign-up:hover,
+#header .logout:hover {
+    background: #ff5349;
+    color: white;
+    box-shadow: 0px 0px 10px 1px #ff5349;
+}
+
+#sign-in-link,
+#sign-up-link,
+#logout-link {
+    display: none;
+}
+
+
+/*authentication state links */
+
+#authentication-state-links {
+    flex-direction: row-reverse;
+    width: 50%;
+}
+
+.user-avatar-link {
+    text-decoration: none;
+}
+
+#user-avatar {
+    background: rgba(248, 248, 248, 0.774);
+    border-radius: 10px;
+    display: none;
+    position: static;
+    flex-direction: row;
+    align-items: center;
+    z-index: 900;
+    padding: 5px;
+}
+
+#user-avatar #username {
+    margin: 0px 5px 0px 10px;
+}
+
+.your-skills {
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    margin: 40px 80px 80px 80px;
+}
+
+.your-skills h4 {
+    display: flex;
+    position: relative;
+    margin-bottom: 40px;
+}
+
+.your-skills .box-container {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.your-skills .box-container .box-card {
+    background: white;
+    padding: 0 30px 30px 30px;
+    width: 46%;
+    height: 280px;
+    margin-bottom: 50px;
+    display: flex;
+    box-shadow: 0px 0px 20px 1px rgba(0, 0, 0, 0.1);
+    flex-direction: column;
+}
+
+.your-skills .box-container .box-card .card-badge {
+    position: relative;
+    display: flex;
+    top: -25px;
+    justify-content: flex-end;
+}
+
+.your-skills .box-container .box-card .card-content {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    top: -30px;
+    justify-content: space-between;
+}
+
+.your-skills .box-container .box-card .card-content .category {
+    position: relative;
+    top: -30px;
+}
+
+.card-content .heading {
+    position: relative;
+    top: -20px;
+    font-size: 24px;
+    font-weight: 400px;
+    letter-spacing: 0.018em;
+    color: rgb(48, 21, 21);
+}
+
+.card-content .progress-bar {
+    width: 450px;
+    background-color: #f0f1f0;
+    height: 5px;
+}
+
+.card-content .progress-bar-1 {
+    top: -5px;
+    background-color: #e02116;
+    height: 5px;
+    position: relative;
+}
+
+.card-content .progress-tracker {
+    display: flex;
+    position: relative;
+    flex-direction: row;
+    width: 100%;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    font-size: 12px;
+}
+
+.progress-comments {
+    color: rgb(82, 80, 80);
+    margin-left: 5px;
+    letter-spacing: 1px;
+}
+
+.card-content .practice {
+    text-decoration: none;
+    padding: 15px 20px;
+    background: #ff5349;
+    width: 250px;
+    color: white;
+    font-weight: 500;
+    position: relative;
+    margin-top: 10px;
+    font-size: 20px;
+    border-radius: 2px;
+    letter-spacing: 1px;
+    box-shadow: 0px 10px 10px 1px #fd9c97;
+    text-align: center;
+}
+
+.card-content .practice:hover {
+    box-shadow: 0px 2px 10px 1px #fd9c97;
+}

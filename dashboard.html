@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DashBoard | BaketheCode</title>
+    <meta name="Author" content="BaketheCode" />
+    <meta name="Description" content="Online Platform for Learning new Programming Languages and Online Coding Practices." />
+    <meta name="Keywords" content="BaketheCode, bakethecode, Bakethecode, Online Coding Platform, Learn Coding Online, learn while code, earn while coding,
+        learn C++, C, Java, C++ Practice problems, c practice problems, java practice problems, python practice problems, how to earn money while coding,
+        best coding platform, best online coding platform, online coding compiler, online C++ compiler, online compilers for java, online compiler for python" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/7.13.1/firebase-app.js"></script>
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+    <script src="https://www.gstatic.com/firebasejs/7.13.1/firebase-analytics.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.13.1/firebase-auth.js"></script>
+    <script>
+        function checkLogin() {
+            firebase.auth().onAuthStateChanged(function(user) {
+                if (user) {
+                    // User is signed in.
+                    console.log("User is already logged in.");
+                    document.getElementById("sign-in-link").style.cssText = "display: none";
+                    document.getElementById("sign-up-link").style.cssText = "display: none";
+                    document.getElementById("logout-link").style.cssText = "display: flex";
+                    document.getElementById("user-avatar").style.cssText = "display: flex";
+                } else {
+                    console.log("User is not logged in.");
+                    document.getElementById("sign-in-link").style.cssText = "display: flex";
+                    document.getElementById("sign-up-link").style.cssText = "display: flex";
+                    document.getElementById("logout-link").style.cssText = "display: none";
+                    document.getElementById("user-avatar").style.cssText = "display: none";
+                }
+            });
+        }
+    </script>
+    <script>
+        // Your web app's Firebase configuration
+        var firebaseConfig = {
+            apiKey: "AIzaSyAhqCG0zNjGhYKGLeEQfXMcdzbb8oHrRyE",
+            authDomain: "bakethecode.firebaseapp.com",
+            databaseURL: "https://bakethecode.firebaseio.com",
+            projectId: "bakethecode",
+            storageBucket: "bakethecode.appspot.com",
+            messagingSenderId: "500298729385",
+            appId: "1:500298729385:web:f976d794c09f415413a6b8",
+            measurementId: "G-2XX6K8LV35"
+        };
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+        firebase.analytics();
+        checkLogin();
+    </script>
+    <link rel="stylesheet" href="css/dashboard.css">
+    <link rel="stylesheet" type="text/css" href="css/hover.css" media="all">
+    <link rel="icon" href="/img/logo.png">
+    <!--Including Sweetalert2 framework in the web app-->
+    <script src="javascript/sweetalert/sweetalert2.min.js"></script>
+    <link rel="stylesheet" href="javascript/sweetalert/sweetalert2.min.css">
+</head>
+
+<body>
+    <!--Header-->
+    <header id="header">
+        <div class="offers">
+        </div>
+        <img src="img/logo - red.png" alt="" class="logo hvr-grow" height="50px" width="50px">
+        <h2 id="logo-text" style="color: red; padding-left: 5px;">BaketheCode</h2>
+        <ul id="nav">
+            <li class="logo hvr-grow"><a href="index.html">Home</a></li>
+            <li class="logo hvr-grow"><a href="practice.html">Practice</a></li>
+            <li class="logo hvr-grow"><a href="code_library.html">Code Library</a></li>
+            <li class="logo hvr-grow"><a href="dashboard.html" style="color: red;">Dashboard</a></li>
+        </ul>
+        <ul id="authentication-state-links">
+            <li id="sign-in-link"><a href="Login.html" class="sign-in">Sign In</a></li>
+            <li id="sign-up-link"><a href="Register.html" class="sign-up">Sign Up</a></li>
+            <li id="logout-link"><a href="" onclick="logout()" class="logout">Logout</a></li>
+            <a href="" class="user-avatar-link">
+                <div id="user-avatar">
+                    <img src="img/logo - red.png" alt="" id="avatar" height="32px" width="32px">
+                    <h5 id="username">username</h5>
+                    <i class="fa fa-angle-down"></i>
+                </div>
+            </a>
+        </ul>
+    </header>
+    <script src="javascript/index.js"></script>
+    <div class="your-skills">
+        <h4 style="font-size: 24px; font-weight: 600;">Your Skills</h4>
+        <div class="box-container">
+            <div class="box-card">
+                <div class="card-badge"><img src="svg/new.svg" alt="" height="90px" width="90px">
+                </div>
+                <div class="card-content">
+                    <p class="category" style="font-size:12px; letter-spacing: 0.05em; color:rgb(204, 186, 186);">INTERVIEW PREPARATION</p>
+                    <h2 class="heading">Interview Preparation Kit</h2>
+                    <i class="progress-bar"></i>
+                    <i class="progress-bar-1" style="width: 10%;"></i>
+                    <div class="progress-tracker">
+                        <p class="prpgress-percentage" style="font-weight: 600; letter-spacing: 0.05em;">10%</p>
+                        <p class="progress-comments">(3/50 challenges solved)</p>
+                    </div>
+                    <a href="#" class="practice">Start Practice</a>
+                </div>
+            </div>
+            <div class="box-card">
+                <div class="card-badge"><img src="svg/c.svg" alt="" height="90px" width="90px">
+                </div>
+                <div class="card-content">
+                    <p class="category" style="font-size:12px; letter-spacing: 0.05em; color:rgb(204, 186, 186);">LANGUAGE PROFICIENCY</p>
+                    <h2 class="heading">C</h2>
+                    <i class="progress-bar"></i>
+                    <i class="progress-bar-1" style="width: 200px;"></i>
+                    <div class="progress-tracker">
+                        <p class="prpgress-percentage" style="font-weight: 600; letter-spacing: 0.05em;">10%</p>
+                        <p class="progress-comments">(3/50 challenges solved)</p>
+                    </div>
+                    <a href="#" class="practice">Start Practice</a>
+                </div>
+            </div>
+            <div class="box-card">
+                <div class="card-badge"><img src="svg/c++.svg" alt="" height="90px" width="90px">
+                </div>
+                <div class="card-content">
+                    <p class="category" style="font-size:12px; letter-spacing: 0.05em; color:rgb(204, 186, 186);">LANGUAGE PROFICIENCY</p>
+                    <h2 class="heading">C++</h2>
+                    <i class="progress-bar"></i>
+                    <i class="progress-bar-1" style="width: 200px;"></i>
+                    <div class="progress-tracker">
+                        <p class="prpgress-percentage" style="font-weight: 600; letter-spacing: 0.05em;">10%</p>
+                        <p class="progress-comments">(3/50 challenges solved)</p>
+                    </div>
+                    <a href="#" class="practice">Start Practice</a>
+                </div>
+            </div>
+            <div class="box-card">
+                <div class="card-badge"><img src="svg/python.svg" alt="" height="90px" width="90px">
+                </div>
+                <div class="card-content">
+                    <p class="category" style="font-size:12px; letter-spacing: 0.05em; color:rgb(204, 186, 186);">LANGUAGE PROFICIENCY</p>
+                    <h2 class="heading">Python</h2>
+                    <i class="progress-bar"></i>
+                    <i class="progress-bar-1" style="width: 200px;"></i>
+                    <div class="progress-tracker">
+                        <p class="prpgress-percentage" style="font-weight: 600; letter-spacing: 0.05em;">10%</p>
+                        <p class="progress-comments">(3/50 challenges solved)</p>
+                    </div>
+                    <a href="#" class="practice">Start Practice</a>
+                </div>
+            </div>
+            <div class="box-card">
+                <div class="card-badge"><img src="svg/javascript.svg" alt="" height="90px" width="90px">
+                </div>
+                <div class="card-content">
+                    <p class="category" style="font-size:12px; letter-spacing: 0.05em; color:rgb(204, 186, 186);">LANGUAGE PROFICIENCY</p>
+                    <h2 class="heading">Javascript</h2>
+                    <i class="progress-bar"></i>
+                    <i class="progress-bar-1" style="width: 200px;"></i>
+                    <div class="progress-tracker">
+                        <p class="prpgress-percentage" style="font-weight: 600; letter-spacing: 0.05em;">10%</p>
+                        <p class="progress-comments">(3/50 challenges solved)</p>
+                    </div>
+                    <a href="#" class="practice">Start Practice</a>
+                </div>
+            </div>
+            <div class="box-card">
+                <div class="card-badge"><img src="svg/java.svg" alt="" height="90px" width="90px">
+                </div>
+                <div class="card-content">
+                    <p class="category" style="font-size:12px; letter-spacing: 0.05em; color:rgb(204, 186, 186);">LANGUAGE PROFICIENCY</p>
+                    <h2 class="heading">Java</h2>
+                    <i class="progress-bar"></i>
+                    <i class="progress-bar-1" style="width: 200px;"></i>
+                    <div class="progress-tracker">
+                        <p class="prpgress-percentage" style="font-weight: 600; letter-spacing: 0.05em;">10%</p>
+                        <p class="progress-comments">(10/50 challenges solved)</p>
+                    </div>
+                    <a href="#" class="practice">Start Practice</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
