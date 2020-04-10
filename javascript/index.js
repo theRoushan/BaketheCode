@@ -62,7 +62,9 @@ function signup() {
     var confirm_userPass = document.getElementById("confirm-password").value;
 
     if (userPass == confirm_userPass) {
-        firebase.auth().createUserWithEmailAndPassword(userEmail, userPass).catch(function(error) {
+        firebase.auth().createUserWithEmailAndPassword(userEmail, userPass).then(function() {
+
+        }).catch(function(error) {
             // Handle Errors here.
             var errorCode = error.code;
             var errorMessage = error.message;
