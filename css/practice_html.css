@@ -53,7 +53,8 @@ body {
 #header ul li a {
     position: relative;
     color: black;
-    font-size: 16px;
+    font-size: 15px;
+    font-weight: 500;
     text-decoration: none;
 }
 
@@ -71,6 +72,8 @@ body {
     border: 1px solid #ff5349;
     border-radius: 10px;
     color: #ff5349;
+    display: flex;
+    align-items: center;
 }
 
 #header .sign-in:hover,
@@ -160,7 +163,11 @@ body {
     color: rgba(0, 0, 0, 0.4);
 }
 
-.problems .properties .label {
+.problems .properties .level {
+    display: flex;
+}
+
+.problems .properties .max-score {
     display: flex;
 }
 
@@ -169,7 +176,7 @@ body {
 }
 
 .problems .problem-name {
-    color: #4f80e1;
+    color: #ff5349;
     padding: 10px 0;
     font-size: 18px;
 }
@@ -180,8 +187,10 @@ body {
 }
 
 .problems .read-more,
-.see-more {
-    background: #4f80e1;
+.see-more,
+.forward,
+.backward {
+    background: #ff5349;
     outline: none;
     border: none;
     padding: 5px 10px;
@@ -190,6 +199,14 @@ body {
     color: white;
     position: relative;
     font-size: 12px;
+    width: 80px;
+    justify-content: center;
+}
+
+.forward,
+.backward {
+    font-size: 16px;
+    width: 100px;
 }
 
 .problems .read-more {
@@ -197,8 +214,10 @@ body {
 }
 
 .problems .read-more:hover,
-.see-more:hover {
-    background: #ff5349;
+.see-more:hover,
+.forward:hover,
+.backward:hover {
+    box-shadow: 2px 0px 15px 1px rgb(247, 132, 132);
 }
 
 .sidebar {
@@ -223,7 +242,7 @@ body {
 
 .sidebar .top-questions h4,
 .sidebar .top-programming-languages h4 {
-    color: royalblue;
+    color: #ff5349;
     font-size: 15px;
     margin-bottom: 10px;
 }
@@ -238,4 +257,122 @@ body {
 .sidebar .top-questions ol li,
 .sidebar .top-programming-languages ol li {
     font-size: 13px;
+    padding: 2px;
+}
+
+.sidebar .top-questions ol li a,
+.sidebar .top-programming-languages ol li a {
+    font-size: 13px;
+    margin-bottom: 5px;
+    text-decoration: none;
+    font-weight: 500;
+    color: black;
+}
+
+.sidebar .top-questions ol li a:hover,
+.sidebar .top-programming-languages ol li a:hover {
+    color: #ff5349;
+}
+
+.toggle-question {
+    width: 100%;
+    display: flex;
+    position: relative;
+    justify-content: space-between;
+    margin: 40px 20px;
+}
+
+
+/*CSS Code for CodeLibrary.html 
+Author : The Roushan */
+
+.code-library-container {
+    display: flex;
+    position: relative;
+    margin: 60px 50px;
+    flex-direction: row;
+}
+
+.code-library-container .code-library-content {
+    width: 70%;
+}
+
+.code-library-container .code-library-content .problems {
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    background: white;
+    border: 1px solid #ddd;
+    box-shadow: 0px 0px 10px 0px #ddd;
+    padding: 40px 80px;
+}
+
+.code-library-container .problems .properties {
+    display: flex;
+    position: relative;
+    flex-direction: row;
+    justify-content: start;
+    letter-spacing: 0px;
+    font-size: 11px;
+}
+
+.code-library-container .problems .read-more {
+    display: flex;
+    align-self: flex-end;
+    font-size: 14px;
+    width: 170px;
+    text-decoration: none;
+    border-radius: 0px;
+    align-items: center;
+    padding: 8px;
+    top: 0px;
+    box-shadow: 0px 5px 10px 1px #ff9c97;
+}
+
+.code-library-container .code-library-sidebar {
+    display: flex;
+    flex-direction: column;
+    padding: 50px;
+    width: 30%;
+    font-size: 14px;
+}
+
+.code-library-container .code-library-sidebar .status {
+    display: flex;
+    flex-direction: column;
+}
+
+.code-library-container .code-library-sidebar h4 {
+    font-weight: 500;
+    color: rgba(0, 0, 0, 0.3);
+    padding-bottom: 5px;
+    padding-top: 5px;
+    font-size: 15px;
+}
+
+.code-library-container .code-library-sidebar .status .solved {
+    padding-bottom: 5px;
+    color: rgba(0, 0, 0, 0.6);
+}
+
+.code-library-container .code-library-sidebar .status .unsolved {
+    padding-bottom: 30px;
+    border-bottom: 1px solid #ddd;
+    color: rgba(0, 0, 0, 0.6);
+}
+
+.difficulty .easy {
+    padding-bottom: 5px;
+    color: rgba(0, 0, 0, 0.6);
+}
+
+.difficulty .medium {
+    padding-bottom: 5px;
+    color: rgba(0, 0, 0, 0.6);
+}
+
+.difficulty .hard {
+    padding-bottom: 30px;
+    border-bottom: 1px solid #ddd;
+    color: rgba(0, 0, 0, 0.6);
 }

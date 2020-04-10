@@ -53,7 +53,7 @@
     #header ul li a {
         position: relative;
         color: black;
-        font-size: 16px;
+        font-size: 15px;
         text-decoration: none;
     }
     
@@ -71,6 +71,8 @@
         border: 1px solid #ff5349;
         border-radius: 10px;
         color: #ff5349;
+        display: flex;
+        align-items: center;
     }
     
     #header .sign-in:hover,
