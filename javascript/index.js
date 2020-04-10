@@ -39,24 +39,30 @@ function login() {
 
     var userEmail = document.getElementById("email").value;
     var userPass = document.getElementById("password").value;
+    var confirm_userPass = document.getElementById("confirm-password").value;
 
-    firebase.auth().signInWithEmailAndPassword(userEmail, userPass).catch(function(error) {
-        // Handle Errors here.
-        var errorCode = error.code;
-        var errorMessage = error.message;
+    if (userPass == confirm_userPass) {
+        firebase.auth().signInWithEmailAndPassword(userEmail, userPass).catch(function(error) {
+            // Handle Errors here.
+            var errorCode = error.code;
+            var errorMessage = error.message;
 
-        window.alert("Error : " + errorMessage);
+            window.alert("Error : " + errorMessage);
 
-        // ...
-    });
+            // ...
+        });
+    } else
+        alert("Both Password donot match. Try Again.")
 
 }
 
 function resetPassword() {
     var auth = firebase.auth();
-    var emailAddress = email;
+    var emailAddress = document.getElementById("resetEmail").value;
     auth.sendPasswordResetEmail(emailAddress).then(function() {
         // Email sent.
+        document.getElementById("forgot-password").style.cssText = "display:none";
+        document.getElementById("password-sent").style.cssText = "display:flex";
     }).catch(function(error) {
         // An error happened.
     });
