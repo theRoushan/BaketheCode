@@ -182,7 +182,7 @@ body {
 }
 
 .card-content .progress-bar {
-    width: 450px;
+    width: 100%;
     background-color: #f0f1f0;
     height: 5px;
 }
