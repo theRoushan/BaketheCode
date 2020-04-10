@@ -65,6 +65,7 @@ function resetPassword() {
         document.getElementById("password-sent").style.cssText = "display:flex";
     }).catch(function(error) {
         // An error happened.
+        alert(error);
     });
 }
 
