@@ -3,10 +3,10 @@ BaketheCode is an online Coding Platform which offers Students to earn money whi
 
 To View the Website visit : https://bakethecode.me
 
-# Author : The Roushan
+## Author : The Roushan
 *The Roushan* is author of this coding website.
 
-# Copyright
+## Copyright
 This website is copyright protected. Copying or Using this website for any Personal or Commercial use is an punishable offence.
 
 Copyright &copy; 2020 | The Roushan | All Rights Reserved.
