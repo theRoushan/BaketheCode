@@ -11,52 +11,10 @@
         learn C++, C, Java, C++ Practice problems, c practice problems, java practice problems, python practice problems, how to earn money while coding,
         best coding platform, best online coding platform, online coding compiler, online C++ compiler, online compilers for java, online compiler for python" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <!-- The core Firebase JS SDK is always required and must be listed first -->
-    <script src="https://www.gstatic.com/firebasejs/7.13.1/firebase-app.js"></script>
-    <!-- TODO: Add SDKs for Firebase products that you want to use
-     https://firebase.google.com/docs/web/setup#available-libraries -->
-    <script src="https://www.gstatic.com/firebasejs/7.13.1/firebase-analytics.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/7.13.1/firebase-auth.js"></script>
-    <script>
-        function checkLogin() {
-            firebase.auth().onAuthStateChanged(function(user) {
-                if (user) {
-                    // User is signed in.
-                    console.log("User is already logged in.");
-                    document.getElementById("sign-in-link").style.cssText = "display: none";
-                    document.getElementById("sign-up-link").style.cssText = "display: none";
-                    document.getElementById("logout-link").style.cssText = "display: flex";
-                    document.getElementById("user-avatar").style.cssText = "display: flex";
-                } else {
-                    console.log("User is not logged in.");
-                    document.getElementById("sign-in-link").style.cssText = "display: flex";
-                    document.getElementById("sign-up-link").style.cssText = "display: flex";
-                    document.getElementById("logout-link").style.cssText = "display: none";
-                    document.getElementById("user-avatar").style.cssText = "display: none";
-                }
-            });
-        }
-    </script>
-    <script>
-        // Your web app's Firebase configuration
-        var firebaseConfig = {
-            apiKey: "AIzaSyAhqCG0zNjGhYKGLeEQfXMcdzbb8oHrRyE",
-            authDomain: "bakethecode.firebaseapp.com",
-            databaseURL: "https://bakethecode.firebaseio.com",
-            projectId: "bakethecode",
-            storageBucket: "bakethecode.appspot.com",
-            messagingSenderId: "500298729385",
-            appId: "1:500298729385:web:f976d794c09f415413a6b8",
-            measurementId: "G-2XX6K8LV35"
-        };
-        // Initialize Firebase
-        firebase.initializeApp(firebaseConfig);
-        firebase.analytics();
-        checkLogin();
-    </script>
+
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" type="text/css" href="css/hover.css" media="all">
-    <link rel="icon" href="/img/logo.png">
+    <link rel="icon" href="/img/logo-red.png">
     <!--Including Sweetalert2 framework in the web app-->
     <script src="javascript/sweetalert/sweetalert2.min.js"></script>
     <link rel="stylesheet" href="javascript/sweetalert/sweetalert2.min.css">
@@ -65,10 +23,8 @@
 <body>
     <!--Header-->
     <header id="header">
-        <div class="offers">
-        </div>
-        <img src="img/logo - red.png" alt="" class="logo hvr-grow" height="50px" width="50px">
-        <h2 id="logo-text" style="color: red; padding-left: 5px;">BaketheCode</h2>
+        <img src="img/logo-red.png" alt="" class="logo hvr-grow" height="50px" width="50px">
+        <h2 id="logo-text" style="color: black; padding-left: 5px;">BaketheCode</h2>
         <ul id="nav">
             <li class="logo hvr-grow"><a href="index.html" style="color: red;">Home</a></li>
             <li class="logo hvr-grow"><a href="practice.html">Practice</a></li>
@@ -138,7 +94,14 @@
     <!--Testimonials-->
     <!--Footer-->
     <section class="footer">
-
+        <div class="links">
+            <a href="index.html">Home</a>
+            <a href="practice.html">Practice</a>
+            <a href="contact_us.html">Contact Us</a>
+            <a href="contests.html">Contest</a>
+            <a href="about-us.html">About Us</a>
+            <a href="dashboard.html">Dashboard</a>
+        </div>
     </section>
     <script>
         // When the user scrolls the page, execute myFunction
@@ -161,6 +124,50 @@
                 header.classList.remove("sticky");
             }
         }
+    </script>
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/7.13.1/firebase-app.js"></script>
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+    <script src="https://www.gstatic.com/firebasejs/7.13.1/firebase-analytics.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.13.1/firebase-auth.js"></script>
+    <script>
+        function checkLogin() {
+            firebase.auth().onAuthStateChanged(function(user) {
+                if (user) {
+                    // User is signed in.
+                    console.log("User is already logged in.");
+                    document.getElementById("sign-in-link").style.cssText = "display: none";
+                    document.getElementById("sign-up-link").style.cssText = "display: none";
+                    document.getElementById("logout-link").style.cssText = "display: flex";
+                    document.getElementById("user-avatar").style.cssText = "display: flex";
+                    document.getElementById("username").innerText = user.email;
+                } else {
+                    console.log("User is not logged in.");
+                    document.getElementById("sign-in-link").style.cssText = "display: flex";
+                    document.getElementById("sign-up-link").style.cssText = "display: flex";
+                    document.getElementById("logout-link").style.cssText = "display: none";
+                    document.getElementById("user-avatar").style.cssText = "display: none";
+                }
+            });
+        }
+    </script>
+    <script>
+        // Your web app's Firebase configuration
+        var firebaseConfig = {
+            apiKey: "AIzaSyAhqCG0zNjGhYKGLeEQfXMcdzbb8oHrRyE",
+            authDomain: "bakethecode.firebaseapp.com",
+            databaseURL: "https://bakethecode.firebaseio.com",
+            projectId: "bakethecode",
+            storageBucket: "bakethecode.appspot.com",
+            messagingSenderId: "500298729385",
+            appId: "1:500298729385:web:f976d794c09f415413a6b8",
+            measurementId: "G-2XX6K8LV35"
+        };
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+        firebase.analytics();
+        checkLogin();
     </script>
     <script src="javascript/index.js"></script>
 

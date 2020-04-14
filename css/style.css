@@ -188,7 +188,7 @@
         padding: 30px;
         flex-wrap: wrap;
         flex-direction: column;
-        border-radius: 0px 100px 100px 100px;
+        border-radius: 0px 90px 90px 90px;
         position: relative;
         background: linear-gradient(to right, #f0f0f1, #f1f1f0);
         justify-content: center;
@@ -201,8 +201,8 @@
     }
     
     .products .card img {
-        height: 300px;
-        width: 300px;
+        height: 280px;
+        width: 280px;
     }
     
     .products .card h3,
@@ -211,6 +211,30 @@
         font-weight: 500;
         color: #ff5349;
         font-size: 20px;
+    }
+    /*Customization of Footer Section */
+    
+    .footer {
+        display: flex;
+        position: relative;
+        flex-direction: row;
+        background-color: #292c44;
+    }
+    
+    .footer .links {
+        display: flex;
+        width: 100%;
+        background-color: #292c44;
+        justify-content: center;
+        position: relative;
+    }
+    
+    .footer .links a {
+        position: relative;
+        color: white;
+        font-weight: 300;
+        font-size: 14px;
+        margin: 5px 30px;
     }
     /* Login Page Designs *****************************/
     /*Login Page as .login and signup page as .signup*/
@@ -388,6 +412,12 @@
         position: relative;
         display: flex;
         align-items: center;
+        border: 1px solid #ddd;
+    }
+    
+    .login-form .input:focus,
+    .signup-form .input:focus {
+        border-color: #ff5349;
     }
     
     .login-form .input input,
@@ -486,4 +516,15 @@
     }
     /**********Media Queries for Multiple Device support and Resonsive website */
     
-    @media only screen and (max-width: 600px) {}
+    @media only screen and (min-width: 1400px) {
+        .banner-container img {
+            height: 60%;
+            width: 80%;
+        }
+        .products {
+            padding: 100px 200px;
+        }
+        .products .card {
+            padding: 60px;
+        }
+    }

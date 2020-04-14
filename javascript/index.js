@@ -5,7 +5,7 @@ function redirect_to_homepage() {
 };
 
 
-function checkAuthentication() {
+async function checkAuthentication() {
     firebase.auth().onAuthStateChanged(function(user) {
         console.log('checkAuthentication() loaded successfully.');
         if (user) {
