@@ -459,6 +459,36 @@ Author : The Roushan */
     text-align: center;
 }
 
+
+/*Customization of Footer Section */
+
+.footer {
+    display: flex;
+    position: relative;
+    flex-direction: row;
+    background-color: #292c44;
+}
+
+.footer .links {
+    display: flex;
+    width: 100%;
+    background-color: #ff5349;
+    justify-content: center;
+    position: relative;
+}
+
+.footer .links a {
+    position: relative;
+    color: white;
+    font-weight: 300;
+    font-size: 14px;
+    margin: 5px 30px;
+}
+
+.footer .links a:hover {
+    text-decoration: underline;
+}
+
 @media only screen and (min-width: 1368px) {
     .main-container {
         margin: 100px

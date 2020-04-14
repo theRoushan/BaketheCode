@@ -224,7 +224,7 @@
     .footer .links {
         display: flex;
         width: 100%;
-        background-color: #292c44;
+        background-color: #ff5349;
         justify-content: center;
         position: relative;
     }
@@ -235,6 +235,10 @@
         font-weight: 300;
         font-size: 14px;
         margin: 5px 30px;
+    }
+    
+    .footer .links a:hover {
+        text-decoration: underline;
     }
     /* Login Page Designs *****************************/
     /*Login Page as .login and signup page as .signup*/
