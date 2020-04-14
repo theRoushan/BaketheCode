@@ -24,7 +24,10 @@
     <!--Header-->
     <header id="header">
         <img src="img/logo-red.png" alt="" class="logo hvr-grow" height="50px" width="50px">
-        <h2 id="logo-text" style="color: black; padding-left: 5px;">BaketheCode</h2>
+        <div class="logo-text">
+            <h2 id="logo-text" style="color: red; padding-left: 5px;" class="logo-text">BaketheCode</h2>
+            <i class="fa fa-bars" id="hamburger" onclick="mobileNav();"></i>
+        </div>
         <ul id="nav">
             <li class="logo hvr-grow"><a href="index.html" style="color: red;">Home</a></li>
             <li class="logo hvr-grow"><a href="practice.html">Practice</a></li>
@@ -34,7 +37,6 @@
         <ul id="authentication-state-links">
             <li id="sign-in-link"><a href="Login.html" class="sign-in">Sign In</a></li>
             <li id="sign-up-link"><a href="Register.html" class="sign-up">Sign Up</a></li>
-            <li id="logout-link"><a href="" onclick="logout()" class="logout">Logout</a></li>
             <a href="" class="user-avatar-link">
                 <div id="user-avatar">
                     <img src="img/logo-red.png" alt="" id="avatar" height="32px" width="32px">
@@ -42,6 +44,7 @@
                     <i class="fa fa-angle-down"></i>
                 </div>
             </a>
+            <li id="logout-link"><a href="" onclick="logout()" class="logout">Logout</a></li>
         </ul>
     </header>
     <!------Banner-->
@@ -55,7 +58,7 @@
             </div>
         </div>
     </section>
-    <section class="banner-logged">
+    <!--<section class="banner-logged">
         <div class="banner-container">
             <img src="./svg/undraw_new_decade_n4qd.svg" alt="">
             <div class="banner-content">
@@ -64,7 +67,7 @@
                 <a href="Register.html" class="sign-up hvr-grow">Join Our Team</a>
             </div>
         </div>
-    </section>
+    </section>-->
     <section class="products">
         <a href="practice.html">
             <div class="card hvr-grow">
@@ -125,7 +128,20 @@
             }
         }
     </script>
-    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script>
+        function mobileNav() {
+            var height = document.getElementById("header");
+            if (height.style.height === "40px") {
+                document.getElementById("header").style.height = "290px";
+                document.getElementById("nav").style.display = "block";
+                document.getElementById("authentication-state-links").style.display = "block";
+            } else {
+                document.getElementById("header").style.height = "40px";
+                document.getElementById("nav").style.display = "none";
+                document.getElementById("authentication-state-links").style.display = "none";
+            }
+        }
+    </script>
     <script src="https://www.gstatic.com/firebasejs/7.13.1/firebase-app.js"></script>
     <!-- TODO: Add SDKs for Firebase products that you want to use
      https://firebase.google.com/docs/web/setup#available-libraries -->
@@ -169,6 +185,7 @@
         firebase.analytics();
         checkLogin();
     </script>
+
     <script src="javascript/index.js"></script>
 
 </body>

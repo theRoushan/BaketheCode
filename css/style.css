@@ -1,534 +1,638 @@
-    @import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700,800,900&display=swap');
-    * {
-        margin: 0;
-        padding: 0;
-        font-family: 'Poppins', sans-serif;
-        box-sizing: border-box;
-        transition: 0.2s;
-    }
-    
-    html {
-        scroll-behavior: smooth;
-        transition: 0.1s;
-    }
-    
-    body {
-        width: 100%;
-        min-height: 100vh;
-        font-family: 'Poppins', sans-serif;
-    }
-    
-    #header {
-        position: sticky;
-        top: 0;
-        left: 0;
-        width: 100%;
-        z-index: 100;
-        background: white;
-        padding: 10px 40px;
-        display: flex;
-        align-items: center;
-        height: 70px;
-        justify-content: space-between;
-    }
-    
-    #header ul {
-        position: relative;
-        display: flex;
-        list-style-type: none;
-    }
-    
-    #nav {
-        justify-content: flex-start;
-        align-items: center;
-        margin-left: 50px;
-        width: 100%;
-    }
-    
-    #header ul li {
-        position: relative;
-        margin: 0px 20px;
-    }
-    
-    #header ul li a {
-        position: relative;
-        color: black;
-        font-size: 15px;
-        text-decoration: none;
-    }
-    
-    #header ul li a:hover {
-        position: relative;
-        color: #ff5349;
-        cursor: pointer;
-    }
-    
-    #header .sign-in,
-    #header .sign-up,
-    .sign-up,
-    #header .logout {
-        padding: 5px 15px 5px 15px;
-        border: 1px solid #ff5349;
-        border-radius: 10px;
-        color: #ff5349;
-        display: flex;
-        align-items: center;
-    }
-    
-    #header .sign-in:hover,
-    #header .sign-up:hover,
-    .sign-up:hover,
-    #header .logout:hover {
-        background: #ff5349;
-        color: white;
-        box-shadow: 0px 0px 10px 1px #ff5349;
-    }
-    
-    #sign-in-link,
-    #sign-up-link,
-    #logout-link {
-        display: none;
-    }
-    
-    .sticky {
-        align-items: center;
-        width: 100%;
-        z-index: 100;
-        background: white;
-        padding: 10px 40px;
-        box-shadow: 0px 0px 10px 1px rgba(0, 0, 0, 0.1);
-    }
-    /*authentication state links */
-    
-    #authentication-state-links {
-        flex-direction: row-reverse;
-        width: 50%;
-    }
-    
-    #user-avatar {
-        background: rgba(248, 248, 248, 0.774);
-        border-radius: 10px;
-        display: none;
-        position: static;
-        flex-direction: row;
-        align-items: center;
-        z-index: 900;
-        padding: 5px;
-    }
-    
-    #user-avatar #username {
-        margin: 0px 5px 0px 10px;
-    }
-    
-    .banner {
-        position: relative;
-        min-height: 100vh;
-        width: 100%;
-    }
-    
-    .banner-container {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        position: relative;
-    }
-    
-    .banner-container img {
-        height: 600px;
-        width: 800px;
-    }
-    
-    .banner .banner-container .banner-content {
-        display: flex;
-        position: relative;
-        padding: 30px;
-        background: #292c44;
-        flex-direction: column;
-        justify-content: center;
-    }
-    
-    .banner-content h2 {
-        position: relative;
-        font-size: 50px;
-        color: white;
-    }
-    
-    .banner-content h3 {
-        position: relative;
-        font-size: 20px;
-        color: #f0f0f1;
-    }
-    
-    .banner-content span {
-        color: #ff5349;
-        font-size: 30px;
-    }
-    
-    .banner-content a {
-        margin-top: 20px;
-        text-align: center;
-        padding: 10px;
-        color: #ff5349;
-        text-decoration: none;
-        width: 200px;
-    }
-    
-    .products {
-        display: flex;
-        position: relative;
-        background-image: url(../svg/redbackground.svg);
-        background-size: cover;
-        width: 100%;
-        padding: 100px;
-        justify-content: space-between;
-    }
-    
-    .products .card {
-        display: flex;
-        padding: 30px;
-        flex-wrap: wrap;
-        flex-direction: column;
-        border-radius: 0px 90px 90px 90px;
-        position: relative;
-        background: linear-gradient(to right, #f0f0f1, #f1f1f0);
-        justify-content: center;
-        align-items: center;
-    }
-    
-    .products .card:hover {
-        box-shadow: 0px 1px 20px 1px rgba(0, 0, 0, 0.1);
-        background: linear-gradient(to right, #f1f1f0, white);
-    }
-    
-    .products .card img {
-        height: 280px;
-        width: 280px;
-    }
-    
-    .products .card h3,
-    a {
-        text-decoration: none;
-        font-weight: 500;
-        color: #ff5349;
-        font-size: 20px;
-    }
-    /*Customization of Footer Section */
-    
-    .footer {
-        display: flex;
-        position: relative;
-        flex-direction: row;
-        background-color: #292c44;
-    }
-    
-    .footer .links {
-        display: flex;
-        width: 100%;
-        background-color: #ff5349;
-        justify-content: center;
-        position: relative;
-    }
-    
-    .footer .links a {
-        position: relative;
-        color: white;
-        font-weight: 300;
-        font-size: 14px;
-        margin: 5px 30px;
-    }
-    
-    .footer .links a:hover {
-        text-decoration: underline;
-    }
-    /* Login Page Designs *****************************/
-    /*Login Page as .login and signup page as .signup*/
-    
-    .login-container {
-        min-height: 100vh;
-        background: url(/svg/login-page.svg);
-        background-size: cover;
-        position: relative;
-        display: flex;
-        flex-direction: column;
-    }
-    
-    .main-container {
-        display: absolute;
-    }
-    
-    .bg {
-        animation: slide 3s ease-in-out infinite alternate;
-        background-image: linear-gradient(-60deg, #18cdca 50%, #4f80e1 50%);
-        bottom: 0;
-        left: -50%;
-        opacity: .5;
-        position: fixed;
-        right: -50%;
-        top: 0;
-        z-index: -1;
-    }
-    
-    .bg2 {
-        animation-direction: alternate-reverse;
-        animation-duration: 4s;
-    }
-    
-    .bg3 {
-        animation-duration: 5s;
-    }
-    
-    @keyframes slide {
-        0% {
-            transform: translateX(-25%);
+        @import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700,800,900&display=swap');
+        * {
+            margin: 0;
+            padding: 0;
+            font-family: 'Poppins', sans-serif;
+            box-sizing: border-box;
+            transition: 0.2s;
         }
-        100% {
-            transform: translateX(25%);
+        
+        html {
+            scroll-behavior: smooth;
+            transition: 0.1s;
         }
-    }
-    
-    .signup-container {
-        min-height: 100vh;
-        position: relative;
-        display: flex;
-        flex-direction: column;
-    }
-    
-    @keyframes bg-pan-left {
-        0% {
-            background-position: 100% 50%
+        
+        body {
+            width: 100%;
+            min-height: 100vh;
+            font-family: 'Poppins', sans-serif;
         }
-        100% {
-            background-position: 0 50%
+        
+        #header {
+            position: sticky;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 100;
+            background: white;
+            padding: 10px 40px;
+            display: flex;
+            align-items: center;
+            height: 70px;
+            justify-content: space-between;
         }
-    }
-    
-    .login-header,
-    .signup-header {
-        position: absolute;
-        width: 100%;
-    }
-    
-    .login-header ul,
-    .signup-header ul {
-        display: flex;
-        list-style-type: none;
-        justify-content: flex-end;
-        margin-right: 50px;
-        align-items: center;
-    }
-    
-    .login-header ul li,
-    .signup-header ul li {
-        position: relative;
-        padding: 20px;
-    }
-    
-    .login-header ul li a,
-    .signup-header ul li a {
-        color: white;
-        font-size: 1em;
-        font-weight: 300;
-    }
-    
-    .login-header ul li a:hover,
-    .signup-header ul li a:hover {
-        color: #ff5349;
-    }
-    
-    #Register,
-    #Login {
-        display: block;
-        padding: 10px 20px;
-        border: 1px solid #18c;
-        border-radius: 10px;
-    }
-    
-    #Register:hover,
-    #Login:hover {
-        background: #4f80e1;
-        color: white;
-        border: 1px solid #4f80e1;
-    }
-    
-    .login-form-container,
-    .signup-form-container {
-        background: url(/svg/login-box-svg.svg) center;
-        display: flex;
-        background-size: cover;
-        background-repeat: no-repeat;
-        position: relative;
-        flex-direction: column;
-        align-items: center;
-        margin: auto;
-        padding: 100px 100px 0px 100px;
-        border-radius: 20px;
-    }
-    
-    .login-content,
-    .signup-content {
-        display: flex;
-        position: relative;
-        flex-direction: column;
-        align-items: center;
-        top: -70px;
-    }
-    
-    .login-form-container h2,
-    .signup-form-container h2 {
-        color: white;
-        font-size: 40px;
-        position: relative;
-    }
-    
-    .login-form-container img,
-    .signup-form-container img {
-        position: relative;
-        height: 100px;
-        width: 100px;
-    }
-    
-    .login-form-container h1,
-    .signup-form-container h1 {
-        font-size: 30px;
-        position: relative;
-        color: #4ce9ac;
-    }
-    
-    .login-form-container h3,
-    .signup-form-container h3 {
-        color: #4f80e1;
-        position: relative;
-        font-size: 25px;
-        font-weight: 600;
-    }
-    
-    .login-form,
-    .signup-form {
-        display: flex;
-        position: relative;
-        flex-direction: column;
-        top: -40px;
-    }
-    
-    .login-form .input,
-    .signup-form .input {
-        margin-top: 20px;
-        position: relative;
-        display: flex;
-        align-items: center;
-        border: 1px solid #ddd;
-    }
-    
-    .login-form .input:focus,
-    .signup-form .input:focus {
-        border-color: #ff5349;
-    }
-    
-    .login-form .input input,
-    .signup-form .input input {
-        border: none;
-        width: 88%;
-        padding: 5px;
-        outline: none;
-        border-width: 0px;
-    }
-    
-    .login-form .input input::placeholder,
-    .signup-form .input input::placeholder {
-        color: rgba(0, 0, 0, 0.2);
-    }
-    
-    .login-form .input img,
-    .signup-form .input img {
-        height: 30px;
-        width: 30px;
-        padding: 5px;
-        background: #4f80e1;
-    }
-    /* For login.html page */
-    
-    #forgot-password {
-        display: flex;
-        text-align: right;
-        padding: 8px;
-        justify-content: flex-end;
-        font-size: 10px;
-        text-decoration: underline;
-        color: #9a9b9a;
-    }
-    
-    .login-form .login {
-        background: #4ce9ac;
-        border: none;
-        padding: 8px;
-        color: white;
-        font-size: 16px;
-        outline: none;
-    }
-    
-    .signup-form .signup {
-        background: #4ce9ac;
-        border: none;
-        margin-top: 20px;
-        padding: 8px;
-        color: white;
-        font-size: 16px;
-        outline: none;
-    }
-    
-    .login-form .login:hover,
-    .signup-form .signup:hover {
-        background: #4f80e1;
-    }
-    
-    .seperate-hr {
-        display: flex;
-        position: relative;
-        justify-content: space-between;
-        align-items: center;
-        top: 10px;
-    }
-    
-    .seperate-hr p {
-        font-size: 16px;
-        color: rgba(0, 0, 0, 0.4);
-    }
-    
-    .hr {
-        width: 90px;
-        background: rgba(0, 0, 0, 0.1);
-        height: 1px;
-    }
-    
-    .login-form .create-account,
-    .signup-form .existing-user {
-        font-size: 13px;
-        text-align: center;
-        margin: 10px;
-        text-decoration: underline;
-        color: #4f80e1;
-    }
-    
-    .design {
-        font-size: 12px;
-        text-align: center;
-        margin-top: 20px;
-    }
-    
-    .design span {
-        color: red;
-    }
-    /**********Media Queries for Multiple Device support and Resonsive website */
-    
-    @media only screen and (min-width: 1400px) {
+        
+        #header ul {
+            position: relative;
+            display: flex;
+            list-style-type: none;
+        }
+        
+        .logo-text {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        
+        #nav {
+            justify-content: flex-start;
+            align-items: center;
+            margin-left: 50px;
+            width: 100%;
+        }
+        
+        #header ul li {
+            position: relative;
+            margin: 0px 20px;
+        }
+        
+        #header ul li a {
+            position: relative;
+            color: black;
+            font-size: 15px;
+            text-decoration: none;
+        }
+        
+        #header ul li a:hover {
+            position: relative;
+            color: #ff5349;
+            cursor: pointer;
+        }
+        
+        #header .sign-in,
+        #header .sign-up,
+        .sign-up,
+        #header .logout {
+            padding: 5px 15px 5px 15px;
+            border: 1px solid #ff5349;
+            border-radius: 10px;
+            color: #ff5349;
+            display: flex;
+            align-items: center;
+        }
+        
+        #header .sign-in:hover,
+        #header .sign-up:hover,
+        .sign-up:hover,
+        #header .logout:hover {
+            background: #ff5349;
+            color: white;
+            box-shadow: 0px 0px 10px 1px #ff5349;
+        }
+        
+        #sign-in-link,
+        #sign-up-link,
+        #logout-link {
+            display: none;
+            justify-content: center;
+        }
+        
+        .sticky {
+            align-items: center;
+            width: 100%;
+            z-index: 100;
+            background: white;
+            padding: 10px 40px;
+            box-shadow: 0px 0px 10px 1px rgba(0, 0, 0, 0.1);
+        }
+        /*authentication state links */
+        
+        #authentication-state-links {
+            flex-direction: row;
+        }
+        
+        #hamburger {
+            display: none;
+            color: white;
+            font-size: 30px;
+        }
+        
+        #user-avatar {
+            background: rgba(248, 248, 248, 0.774);
+            border-radius: 10px;
+            display: none;
+            position: static;
+            flex-direction: row;
+            align-items: center;
+            z-index: 900;
+            justify-content: center;
+            padding: 5px;
+        }
+        
+        #user-avatar #username {
+            margin: 0px 5px 0px 10px;
+        }
+        
+        .banner {
+            position: relative;
+            width: 100%;
+        }
+        
+        .banner-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: relative;
+            outline: none;
+        }
+        
         .banner-container img {
-            height: 60%;
+            height: 600px;
+            width: 800px;
+        }
+        
+        .banner .banner-container .banner-content {
+            display: flex;
+            position: relative;
+            padding: 30px;
+            background: #292c44;
+            flex-direction: column;
+            justify-content: center;
+        }
+        
+        .banner-content h2 {
+            position: relative;
+            font-size: 50px;
+            color: white;
+        }
+        
+        .banner-content h3 {
+            position: relative;
+            font-size: 20px;
+            color: #f0f0f1;
+        }
+        
+        .banner-content span {
+            color: #ff5349;
+            font-size: 30px;
+        }
+        
+        .banner-content a {
+            margin-top: 20px;
+            text-align: center;
+            padding: 10px;
+            color: #ff5349;
+            text-decoration: none;
+            width: 200px;
+        }
+        
+        .products {
+            display: flex;
+            position: relative;
+            background-color: #f0f0f1;
+            width: 100%;
+            justify-content: space-between;
+            min-height: 50vh;
+        }
+        
+        .products .card {
+            display: flex;
+            margin: 30px 40px;
+            flex-wrap: wrap;
+            flex-direction: column;
+            border-radius: 5px;
+            position: relative;
+            background-color: white;
+            justify-content: center;
+            align-items: center;
+            height: 400px;
+            -webkit-tap-highlight-color: transparent;
+        }
+        
+        .products .card:hover {
+            box-shadow: 0px 1px 20px 1px rgba(0, 0, 0, 0.2);
+            background: linear-gradient(to right, #f1f1f0, white);
+        }
+        
+        .products .card img {
+            height: 80%;
             width: 80%;
         }
-        .products {
-            padding: 100px 200px;
+        
+        .products .card h3,
+        a {
+            text-decoration: none;
+            font-weight: 500;
+            color: #ff5349;
+            font-size: 20px;
         }
-        .products .card {
-            padding: 60px;
+        /*Customization of Footer Section */
+        
+        .footer {
+            display: flex;
+            position: relative;
+            flex-direction: row;
+            background-color: #292c44;
         }
-    }
+        
+        .footer .links {
+            display: flex;
+            width: 100%;
+            background-color: #ff5349;
+            justify-content: center;
+            position: relative;
+        }
+        
+        .footer .links a {
+            position: relative;
+            color: white;
+            font-weight: 300;
+            font-size: 14px;
+            margin: 5px 30px;
+        }
+        
+        .footer .links a:hover {
+            text-decoration: underline;
+        }
+        /* Login Page Designs *****************************/
+        /*Login Page as .login and signup page as .signup*/
+        
+        .login-container {
+            min-height: 100vh;
+            background: url(/svg/login-page.svg);
+            background-size: cover;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .main-container {
+            display: absolute;
+        }
+        
+        .bg {
+            animation: slide 3s ease-in-out infinite alternate;
+            background-image: linear-gradient(-60deg, #18cdca 50%, #4f80e1 50%);
+            bottom: 0;
+            left: -50%;
+            opacity: .5;
+            position: fixed;
+            right: -50%;
+            top: 0;
+            z-index: -1;
+        }
+        
+        .bg2 {
+            animation-direction: alternate-reverse;
+            animation-duration: 4s;
+        }
+        
+        .bg3 {
+            animation-duration: 5s;
+        }
+        
+        @keyframes slide {
+            0% {
+                transform: translateX(-25%);
+            }
+            100% {
+                transform: translateX(25%);
+            }
+        }
+        
+        .signup-container {
+            min-height: 100vh;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        @keyframes bg-pan-left {
+            0% {
+                background-position: 100% 50%
+            }
+            100% {
+                background-position: 0 50%
+            }
+        }
+        
+        .login-header,
+        .signup-header {
+            position: absolute;
+            width: 100%;
+        }
+        
+        .login-header ul,
+        .signup-header ul {
+            display: flex;
+            list-style-type: none;
+            justify-content: flex-end;
+            margin-right: 50px;
+            align-items: center;
+        }
+        
+        .login-header ul li,
+        .signup-header ul li {
+            position: relative;
+            padding: 20px;
+        }
+        
+        .login-header ul li a,
+        .signup-header ul li a {
+            color: white;
+            font-size: 1em;
+            font-weight: 300;
+        }
+        
+        .login-header ul li a:hover,
+        .signup-header ul li a:hover {
+            color: #ff5349;
+        }
+        
+        #Register,
+        #Login {
+            display: block;
+            padding: 10px 20px;
+            border: 1px solid #18c;
+            border-radius: 10px;
+        }
+        
+        #Register:hover,
+        #Login:hover {
+            background: #4f80e1;
+            color: white;
+            border: 1px solid #4f80e1;
+        }
+        
+        .login-form-container,
+        .signup-form-container {
+            background: url(/svg/login-box-svg.svg) center;
+            display: flex;
+            background-size: cover;
+            background-repeat: no-repeat;
+            position: relative;
+            flex-direction: column;
+            align-items: center;
+            margin: auto;
+            padding: 100px 100px 0px 100px;
+            border-radius: 20px;
+        }
+        
+        .login-content,
+        .signup-content {
+            display: flex;
+            position: relative;
+            flex-direction: column;
+            align-items: center;
+            top: -70px;
+        }
+        
+        .login-form-container h2,
+        .signup-form-container h2 {
+            color: white;
+            font-size: 40px;
+            position: relative;
+        }
+        
+        .login-form-container img,
+        .signup-form-container img {
+            position: relative;
+            height: 100px;
+            width: 100px;
+        }
+        
+        .login-form-container h1,
+        .signup-form-container h1 {
+            font-size: 30px;
+            position: relative;
+            color: #4ce9ac;
+        }
+        
+        .login-form-container h3,
+        .signup-form-container h3 {
+            color: #4f80e1;
+            position: relative;
+            font-size: 25px;
+            font-weight: 600;
+        }
+        
+        .login-form,
+        .signup-form {
+            display: flex;
+            position: relative;
+            flex-direction: column;
+            top: -40px;
+        }
+        
+        .login-form .input,
+        .signup-form .input {
+            margin-top: 20px;
+            position: relative;
+            display: flex;
+            align-items: center;
+            border: 1px solid #ddd;
+        }
+        
+        .login-form .input:focus,
+        .signup-form .input:focus {
+            border-color: #ff5349;
+        }
+        
+        .login-form .input input,
+        .signup-form .input input {
+            border: none;
+            width: 88%;
+            padding: 5px;
+            outline: none;
+            border-width: 0px;
+        }
+        
+        .login-form .input input::placeholder,
+        .signup-form .input input::placeholder {
+            color: rgba(0, 0, 0, 0.2);
+        }
+        
+        .login-form .input img,
+        .signup-form .input img {
+            height: 30px;
+            width: 30px;
+            padding: 5px;
+            background: #4f80e1;
+        }
+        /* For login.html page */
+        
+        #forgot-password {
+            display: flex;
+            text-align: right;
+            padding: 8px;
+            justify-content: flex-end;
+            font-size: 10px;
+            text-decoration: underline;
+            color: #9a9b9a;
+        }
+        
+        .login-form .login {
+            background: #4ce9ac;
+            border: none;
+            padding: 8px;
+            color: white;
+            font-size: 16px;
+            outline: none;
+        }
+        
+        .signup-form .signup {
+            background: #4ce9ac;
+            border: none;
+            margin-top: 20px;
+            padding: 8px;
+            color: white;
+            font-size: 16px;
+            outline: none;
+        }
+        
+        .login-form .login:hover,
+        .signup-form .signup:hover {
+            background: #4f80e1;
+        }
+        
+        .seperate-hr {
+            display: flex;
+            position: relative;
+            justify-content: space-between;
+            align-items: center;
+            top: 10px;
+        }
+        
+        .seperate-hr p {
+            font-size: 16px;
+            color: rgba(0, 0, 0, 0.4);
+        }
+        
+        .hr {
+            width: 90px;
+            background: rgba(0, 0, 0, 0.1);
+            height: 1px;
+        }
+        
+        .login-form .create-account,
+        .signup-form .existing-user {
+            font-size: 13px;
+            text-align: center;
+            margin: 10px;
+            text-decoration: underline;
+            color: #4f80e1;
+        }
+        
+        .design {
+            font-size: 12px;
+            text-align: center;
+            margin-top: 20px;
+        }
+        
+        .design span {
+            color: red;
+        }
+        /**********Media Queries for Multiple Device support and Resonsive website */
+        
+        @media only screen and (min-width: 1400px) {
+            .banner-container img {
+                height: 60%;
+                width: 80%;
+            }
+            .products {
+                padding: 100px 200px;
+            }
+            .products .card {
+                padding: 60px;
+            }
+        }
+        
+        @media only screen and (max-width: 600px) {
+            #header {
+                width: 100vw;
+                display: block;
+                position: static;
+                background-color: #f0f0f1;
+                text-align: center;
+                padding: 0;
+                height: 40px;
+            }
+            #hamburger {
+                display: flex;
+                background-color: #ff5349;
+                padding: 5px 15px 5px 15px;
+            }
+            .logo-text {
+                background-color: #ddd;
+            }
+            #header img {
+                display: none;
+            }
+            #header ul,
+            #nav {
+                width: 100vw;
+                display: none;
+                padding: 0;
+                margin: 0;
+            }
+            #nav li,
+            #header ul li {
+                display: block;
+                width: 100vw;
+                margin: 0;
+                padding: 8px;
+            }
+            #authentication-state-links {
+                display: none;
+                width: 100vw;
+                text-align: center;
+            }
+            .banner {
+                width: 100vw;
+                position: relative;
+                flex-wrap: wrap;
+            }
+            .banner-container,
+            .products {
+                display: flex;
+                flex-wrap: wrap;
+                flex-direction: column;
+                align-items: center;
+                position: relative;
+                width: 100vw;
+            }
+            .banner-container img {
+                height: 260px;
+                width: 100vw;
+            }
+            .banner-container {
+                flex-direction: row-reverse;
+            }
+            .banner .banner-container .banner-content {
+                display: flex;
+                position: relative;
+                padding: 30px;
+                background: #292c44;
+                flex-direction: column;
+                justify-content: center;
+                width: 100vw;
+            }
+            .products .card img {
+                height: 280px;
+                width: 60%;
+            }
+            .footer .links {
+                width: 100vw;
+                display: flex;
+                flex-direction: column;
+                text-align: center;
+            }
+            .footer .links a {
+                padding: 8px;
+                margin: 0px;
+                display: block;
+            }
+            .footer .links a:hover {
+                background-color: #292c44;
+            }
+        }
