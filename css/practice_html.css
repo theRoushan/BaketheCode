@@ -28,7 +28,6 @@ body {
     padding: 10px 40px;
     display: flex;
     align-items: center;
-    height: 70px;
     justify-content: space-between;
 }
 
@@ -36,6 +35,12 @@ body {
     position: relative;
     display: flex;
     list-style-type: none;
+}
+
+.logo-text {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
 
 #nav {
@@ -54,7 +59,6 @@ body {
     position: relative;
     color: black;
     font-size: 15px;
-    font-weight: 500;
     text-decoration: none;
 }
 
@@ -62,6 +66,11 @@ body {
     position: relative;
     color: #ff5349;
     cursor: pointer;
+}
+
+#header .sign-in,
+#header .sign-up {
+    width: max-content;
 }
 
 #header .sign-in,
@@ -89,6 +98,7 @@ body {
 #sign-up-link,
 #logout-link {
     display: none;
+    justify-content: center;
 }
 
 .sticky {
@@ -104,12 +114,13 @@ body {
 /*authentication state links */
 
 #authentication-state-links {
-    flex-direction: row-reverse;
-    width: 50%;
+    flex-direction: row;
 }
 
-.user-avatar-link {
-    text-decoration: none;
+#hamburger {
+    display: none;
+    color: white;
+    font-size: 30px;
 }
 
 #user-avatar {
@@ -120,6 +131,7 @@ body {
     flex-direction: row;
     align-items: center;
     z-index: 900;
+    justify-content: center;
     padding: 5px;
 }
 
@@ -513,5 +525,60 @@ Author : The Roushan */
         justify-content: center;
         border-radius: 10px;
         box-shadow: 0px 0px 20px 1px rgba(0, 0, 0, 0.1);
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    #header {
+        width: 100vw;
+        display: block;
+        position: static;
+        background-color: #f0f0f1;
+        text-align: center;
+        padding: 0;
+    }
+    #hamburger {
+        display: flex;
+        background-color: #ff5349;
+        padding: 5px 15px 5px 15px;
+    }
+    .logo-text {
+        background-color: #ddd;
+    }
+    #header img {
+        display: none;
+    }
+    #header ul,
+    #nav {
+        width: 100vw;
+        display: none;
+        padding: 0;
+        margin: 0;
+    }
+    #nav li,
+    #header ul li {
+        display: block;
+        width: 100vw;
+        margin: 0;
+        padding: 8px;
+    }
+    #authentication-state-links {
+        display: none;
+        width: 100vw;
+        text-align: center;
+    }
+    .footer .links {
+        width: 100vw;
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+    }
+    .footer .links a {
+        padding: 8px;
+        margin: 0px;
+        display: block;
+    }
+    .footer .links a:hover {
+        background-color: #292c44;
     }
 }

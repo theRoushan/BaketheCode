@@ -52,11 +52,8 @@
         <div class="banner-container">
             <img src="./svg/undraw_new_decade_n4qd.svg" alt="">
             <div class="banner-content">
-                <h2>BaketheCode</h2>
-                <h3>Wishes You Happy Birthday
-                    <span>Pragati Jain</span> </h3>
-                <!-- <h2>Want to Earn while Coding.</h2>
-                <h3>Join our Community of <span class="hvr-wobble-vertical">100+</span> Developers.</h3>-->
+                <h2>Want to Earn while Coding.</h2>
+                <h3>Join our Community of <span class="hvr-wobble-vertical">100+</span> Developers.</h3>
                 <a href="Register.html" class="sign-up hvr-grow">Join Our Team</a>
             </div>
         </div>
@@ -131,7 +128,20 @@
             }
         }
     </script>
-
+    <script>
+        function mobileNav() {
+            var height = document.getElementById("header");
+            if (height.style.height === "40px") {
+                document.getElementById("header").style.height = "295px";
+                document.getElementById("nav").style.display = "block";
+                document.getElementById("authentication-state-links").style.display = "block";
+            } else {
+                document.getElementById("header").style.height = "40px";
+                document.getElementById("nav").style.display = "none";
+                document.getElementById("authentication-state-links").style.display = "none";
+            }
+        }
+    </script>
     <script src="https://www.gstatic.com/firebasejs/7.13.1/firebase-app.js"></script>
     <!-- TODO: Add SDKs for Firebase products that you want to use
      https://firebase.google.com/docs/web/setup#available-libraries -->
