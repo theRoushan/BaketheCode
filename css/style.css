@@ -28,7 +28,6 @@
             padding: 10px 40px;
             display: flex;
             align-items: center;
-            height: 70px;
             justify-content: space-between;
         }
         
@@ -67,6 +66,11 @@
             position: relative;
             color: #ff5349;
             cursor: pointer;
+        }
+        
+        #header .sign-in,
+        #header .sign-up {
+            width: max-content;
         }
         
         #header .sign-in,
@@ -135,6 +139,7 @@
         
         .banner {
             position: relative;
+            min-height: 100vh;
             width: 100%;
         }
         
@@ -143,7 +148,6 @@
             justify-content: space-between;
             align-items: center;
             position: relative;
-            outline: none;
         }
         
         .banner-container img {
@@ -175,6 +179,7 @@
         .banner-content span {
             color: #ff5349;
             font-size: 30px;
+            margin: 0px 5px;
         }
         
         .banner-content a {
@@ -189,38 +194,37 @@
         .products {
             display: flex;
             position: relative;
-            background-color: #f0f0f1;
+            background-image: url(../svg/redbackground.svg);
+            background-size: cover;
             width: 100%;
+            padding: 100px;
             justify-content: space-between;
-            min-height: 50vh;
         }
         
         .products .card {
             display: flex;
-            margin: 30px 40px;
+            padding: 30px;
             flex-wrap: wrap;
             flex-direction: column;
-            border-radius: 5px;
+            border-radius: 0px 90px 90px 90px;
             position: relative;
-            background-color: white;
+            background: linear-gradient(to right, #f0f0f1, #f1f1f0);
             justify-content: center;
             align-items: center;
-            height: 400px;
-            -webkit-tap-highlight-color: transparent;
         }
         
         .products .card:hover {
-            box-shadow: 0px 1px 20px 1px rgba(0, 0, 0, 0.2);
+            box-shadow: 0px 1px 20px 1px rgba(0, 0, 0, 0.1);
             background: linear-gradient(to right, #f1f1f0, white);
         }
         
         .products .card img {
-            height: 80%;
-            width: 80%;
+            height: 280px;
+            width: 280px;
         }
         
         .products .card h3,
-        a {
+        .products .card a {
             text-decoration: none;
             font-weight: 500;
             color: #ff5349;
@@ -249,6 +253,7 @@
             font-weight: 300;
             font-size: 14px;
             margin: 5px 30px;
+            text-decoration: none;
         }
         
         .footer .links a:hover {
@@ -534,7 +539,7 @@
         }
         /**********Media Queries for Multiple Device support and Resonsive website */
         
-        @media only screen and (min-width: 1400px) {
+        @media only screen and (min-width: 1368px) {
             .banner-container img {
                 height: 60%;
                 width: 80%;
@@ -555,7 +560,6 @@
                 background-color: #f0f0f1;
                 text-align: center;
                 padding: 0;
-                height: 40px;
             }
             #hamburger {
                 display: flex;
@@ -591,6 +595,7 @@
                 width: 100vw;
                 position: relative;
                 flex-wrap: wrap;
+                min-height: fit-content;
             }
             .banner-container,
             .products {
@@ -601,8 +606,13 @@
                 position: relative;
                 width: 100vw;
             }
+            .products {
+                padding: 10%;
+                background-image: none;
+                background-color: #f0f0f1;
+            }
             .banner-container img {
-                height: 260px;
+                height: 285px;
                 width: 100vw;
             }
             .banner-container {
@@ -611,15 +621,30 @@
             .banner .banner-container .banner-content {
                 display: flex;
                 position: relative;
-                padding: 30px;
+                padding: 20px;
                 background: #292c44;
                 flex-direction: column;
                 justify-content: center;
                 width: 100vw;
             }
+            .products .card {
+                display: flex;
+                padding: 30px;
+                flex-wrap: wrap;
+                margin-bottom: 40px;
+                flex-direction: column;
+                border-radius: 10px;
+                background: none;
+                background-color: white;
+                justify-content: center;
+                align-items: center;
+            }
+            .products a {
+                text-decoration: none;
+            }
             .products .card img {
-                height: 280px;
-                width: 60%;
+                height: 300px;
+                width: 80%;
             }
             .footer .links {
                 width: 100vw;

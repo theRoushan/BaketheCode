@@ -1,4 +1,15 @@
-var isLogged; //variable to chcek if the user is logged
+function mobileNav() {
+    var height = document.getElementById("header");
+    if (height.style.height === "70px") {
+        document.getElementById("header").style.height = "295px";
+        document.getElementById("nav").style.display = "block";
+        document.getElementById("authentication-state-links").style.display = "block";
+    } else {
+        document.getElementById("header").style.height = "70px";
+        document.getElementById("nav").style.display = "none";
+        document.getElementById("authentication-state-links").style.display = "none";
+    }
+}
 
 function redirect_to_homepage() {
     location.replace("practice.html")
