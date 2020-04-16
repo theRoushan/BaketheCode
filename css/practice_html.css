@@ -539,6 +539,7 @@ Author : The Roushan */
         display: flex;
         height: fit-content;
         padding: 5%;
+        margin-bottom: 8px;
     }
     .code-library-container .code-library-sidebar {
         display: flex;
