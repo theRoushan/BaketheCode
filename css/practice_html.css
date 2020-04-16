@@ -509,7 +509,7 @@ Author : The Roushan */
     }
     .main-container .main-content .problems {
         position: relative;
-        margin: 0;
+        margin: 10px;
         min-width: 90vw;
         text-align: left;
     }
