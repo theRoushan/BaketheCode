@@ -322,9 +322,16 @@ body {
         width: 100vw;
         text-align: center;
     }
-    .card-content .practice {
+    .your-skills {
+        margin-right: 0px;
+        width: 100vw;
+    }
+    .box-container {
         width: 80vw;
-        left: -45px;
+    }
+    .card-content .practice {
+        width: 95vw;
+        left: -9vw;
     }
     .footer .links {
         width: 100vw;
