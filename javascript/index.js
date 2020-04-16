@@ -1,9 +1,9 @@
 function mobileNav() {
     var height = document.getElementById("header");
     if (height.style.height === "70px") {
-        document.getElementById("header").style.height = "295px";
         document.getElementById("nav").style.display = "block";
         document.getElementById("authentication-state-links").style.display = "block";
+        document.getElementById("header").style.height = "340px";
     } else {
         document.getElementById("header").style.height = "70px";
         document.getElementById("nav").style.display = "none";

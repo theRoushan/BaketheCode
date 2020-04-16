@@ -29,15 +29,19 @@ body {
     padding: 10px 40px;
     display: flex;
     align-items: center;
-    height: 70px;
     justify-content: space-between;
-    box-shadow: 0px 0px 10px 1px rgba(0, 0, 0, 0.1);
 }
 
 #header ul {
     position: relative;
     display: flex;
     list-style-type: none;
+}
+
+.logo-text {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
 
 #nav {
@@ -56,7 +60,6 @@ body {
     position: relative;
     color: black;
     font-size: 15px;
-    font-weight: 500;
     text-decoration: none;
 }
 
@@ -64,6 +67,11 @@ body {
     position: relative;
     color: #ff5349;
     cursor: pointer;
+}
+
+#header .sign-in,
+#header .sign-up {
+    width: max-content;
 }
 
 #header .sign-in,
@@ -91,18 +99,29 @@ body {
 #sign-up-link,
 #logout-link {
     display: none;
+    justify-content: center;
+}
+
+.sticky {
+    align-items: center;
+    width: 100%;
+    z-index: 100;
+    background: white;
+    padding: 10px 40px;
+    box-shadow: 0px 0px 10px 1px rgba(0, 0, 0, 0.1);
 }
 
 
 /*authentication state links */
 
 #authentication-state-links {
-    flex-direction: row-reverse;
-    width: 50%;
+    flex-direction: row;
 }
 
-.user-avatar-link {
-    text-decoration: none;
+#hamburger {
+    display: none;
+    color: white;
+    font-size: 30px;
 }
 
 #user-avatar {
@@ -113,6 +132,7 @@ body {
     flex-direction: row;
     align-items: center;
     z-index: 900;
+    justify-content: center;
     padding: 5px;
 }
 
@@ -124,13 +144,14 @@ body {
     display: flex;
     position: relative;
     flex-direction: column;
-    margin: 40px 80px 80px 80px;
+    margin: 4%;
 }
 
 .your-skills h4 {
     display: flex;
     position: relative;
-    margin-bottom: 40px;
+    margin-bottom: 20px;
+    margin-left: 3.5%;
 }
 
 .your-skills .box-container {
@@ -138,14 +159,15 @@ body {
     flex-direction: row;
     width: 100%;
     flex-wrap: wrap;
-    justify-content: space-between;
+    justify-content: center;
 }
 
 .your-skills .box-container .box-card {
     background: white;
-    padding: 0 30px 30px 30px;
-    width: 46%;
-    height: 280px;
+    margin: 1.5%;
+    padding: 0 20px 20px 20px;
+    width: 360px;
+    height: max-content;
     margin-bottom: 50px;
     display: flex;
     box-shadow: 0px 0px 20px 1px rgba(0, 0, 0, 0.1);
@@ -258,4 +280,60 @@ body {
 
 .footer .links a:hover {
     text-decoration: underline;
+}
+
+@media only screen and (max-width: 600px) {
+    #header {
+        width: 100vw;
+        display: block;
+        position: static;
+        background-color: white;
+        text-align: center;
+        padding: 0;
+    }
+    #hamburger {
+        display: flex;
+        background-color: #ff5349;
+        padding: 20px 25px 20px 25px;
+    }
+    .logo-text {
+        background-color: #ddd;
+        height: 70px;
+    }
+    #header img {
+        display: none;
+    }
+    #header ul,
+    #nav {
+        width: 100vw;
+        display: none;
+        padding: 0;
+        margin: 0;
+    }
+    #nav li,
+    #header ul li {
+        display: block;
+        width: 100vw;
+        margin: 0;
+        padding: 8px;
+    }
+    #authentication-state-links {
+        display: block;
+        width: 100vw;
+        text-align: center;
+    }
+    .footer .links {
+        width: 100vw;
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+    }
+    .footer .links a {
+        padding: 8px;
+        margin: 0px;
+        display: block;
+    }
+    .footer .links a:hover {
+        background-color: #292c44;
+    }
 }

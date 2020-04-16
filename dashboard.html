@@ -23,20 +23,22 @@
 <body>
     <!--Header-->
     <header id="header">
-        <div class="offers">
-        </div>
         <img src="img/logo-red.png" alt="" class="logo hvr-grow" height="50px" width="50px">
-        <h2 id="logo-text" style="color: red; padding-left: 5px;">BaketheCode</h2>
+        <div class="logo-text">
+            <h2 id="logo-text" style="color: red; padding-left: 5px;" class="logo-text">BaketheCode</h2>
+            <i class="fa fa-bars" id="hamburger" onclick="mobileNav();"></i>
+        </div>
         <ul id="nav">
             <li class="logo hvr-grow"><a href="index.html">Home</a></li>
             <li class="logo hvr-grow"><a href="practice.html">Practice</a></li>
-            <li class="logo hvr-grow"><a href="code_library.html">Code Library</a></li>
             <li class="logo hvr-grow"><a href="dashboard.html" style="color: red;">Dashboard</a></li>
+            <li class="logo hvr-grow "><a href="code_library.html">Code Library</a></li>
+            <li class="logo hvr-grow "><a href="contests.html">Contests</a></li>
+            <li class="logo hvr-grow "><a href="contact_us.html">Contact Us</a></li>
         </ul>
         <ul id="authentication-state-links">
             <li id="sign-in-link"><a href="Login.html" class="sign-in">Sign In</a></li>
             <li id="sign-up-link"><a href="Register.html" class="sign-up">Sign Up</a></li>
-            <li id="logout-link"><a href="" onclick="logout()" class="logout">Logout</a></li>
             <a href="" class="user-avatar-link">
                 <div id="user-avatar">
                     <img src="img/logo-red.png" alt="" id="avatar" height="32px" width="32px">
@@ -44,6 +46,7 @@
                     <i class="fa fa-angle-down"></i>
                 </div>
             </a>
+            <li id="logout-link"><a href="" onclick="logout()" class="logout">Logout</a></li>
         </ul>
     </header>
     <script src="javascript/index.js"></script>

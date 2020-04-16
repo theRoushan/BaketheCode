@@ -341,6 +341,10 @@ Author : The Roushan */
     box-shadow: 0px 5px 10px 1px #ff9c97;
 }
 
+.code-library-container .problems .read-more:hover {
+    box-shadow: 0px 5px 5px 1px #ff9c97;
+}
+
 .code-library-container .code-library-sidebar {
     display: flex;
     flex-direction: column;
@@ -389,86 +393,6 @@ Author : The Roushan */
     padding-bottom: 30px;
     border-bottom: 1px solid #ddd;
     color: rgba(0, 0, 0, 0.6);
-}
-
-
-/*Forgot Password PAge  */
-
-.large-container {
-    display: flex;
-    position: relative;
-    flex-direction: column;
-    margin: 50px 30%;
-    padding: 50px;
-    align-items: center;
-    border: 1px solid #ddd;
-    border-radius: 10px;
-}
-
-.forgot-password {
-    display: flex;
-    position: relative;
-    flex-direction: column;
-    align-items: center;
-}
-
-.forgot-password h1 {
-    font-weight: 500;
-    color: #ff5349;
-    font-size: 40px;
-}
-
-.forgot-password h3 {
-    font-weight: 300;
-    color: #af170f;
-    font-size: 15px;
-    margin-bottom: 10px;
-}
-
-.fa-envelope {
-    color: rgba(0, 0, 0, 0.6);
-    padding: 0 10px 0px 10px;
-}
-
-.forgot-password .email-field {
-    background: #f0f0f0;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    margin-bottom: 10px;
-}
-
-.forgot-password .email-field input {
-    border: none;
-    border-radius: 0 5px 5px 0;
-    border-left: 1px solid #ddd;
-    width: 250px;
-    padding: 5px;
-    outline: none;
-}
-
-.forgot-password .email-field input:focus {
-    box-shadow: 0px 0px 2px 1px #0446c2;
-}
-
-.forgot-password button {
-    padding: 10px 20px;
-    margin-top: 5px;
-    border-radius: 5px;
-    background: #4083ff;
-    outline: none;
-    border: none;
-    color: white;
-}
-
-.forgot-password button:hover {
-    background: #0e4dc2;
-}
-
-.password-sent {
-    display: none;
-    position: relative;
-    font-weight: 500;
-    text-align: center;
 }
 
 
@@ -536,14 +460,16 @@ Author : The Roushan */
         background-color: #f0f0f1;
         text-align: center;
         padding: 0;
+        height: max-content;
     }
     #hamburger {
         display: flex;
         background-color: #ff5349;
-        padding: 5px 15px 5px 15px;
+        padding: 20px 25px 20px 25px;
     }
     .logo-text {
         background-color: #ddd;
+        height: 70px;
     }
     #header img {
         display: none;
@@ -566,6 +492,67 @@ Author : The Roushan */
         display: none;
         width: 100vw;
         text-align: center;
+    }
+    .main-container {
+        padding: 0;
+        width: 100vw;
+        margin: 0;
+        position: relative;
+        text-align: center;
+        flex-direction: column-reverse;
+    }
+    .main-container .main-content {
+        position: relative;
+        width: 100vw;
+        margin-right: 0;
+        justify-content: center;
+    }
+    .main-container .main-content .problems {
+        position: relative;
+        margin: 0;
+        min-width: 90vw;
+        text-align: left;
+    }
+    .sidebar {
+        margin: 5%;
+        position: relative;
+        display: flex;
+        width: 90vw;
+        padding: 0;
+        max-height: max-content;
+    }
+    .code-library-container {
+        display: flex;
+        position: absolute;
+        flex-direction: column-reverse;
+        width: 100vw;
+        margin: 0;
+    }
+    .code-library-container .code-library-content {
+        position: relative;
+        margin-top: 20px;
+        width: 100vw;
+    }
+    .code-library-container .code-library-content .problems {
+        position: relative;
+        width: 100vw;
+        display: flex;
+        height: fit-content;
+        padding: 5%;
+    }
+    .code-library-container .code-library-sidebar {
+        display: flex;
+        position: relative;
+        flex-direction: column;
+        width: 100vw;
+        margin: 0;
+        font-size: 14px;
+        height: fit-content;
+        background-color: #f0f0f0;
+    }
+    .code-library-container .problems .read-more {
+        margin: 10px 0px 0px 0px;
+        align-self: flex-start;
     }
     .footer .links {
         width: 100vw;
