@@ -155,30 +155,29 @@
             <a href="about-us.html ">About Us</a>
         </div>
     </section>
-    <script src="javascript/index.js "></script>
-    <!-- The core Firebase JS SDK is always required and must be listed first -->
-    <script src="https://www.gstatic.com/firebasejs/7.13.1/firebase-app.js "></script>
+
+    <script src="https://www.gstatic.com/firebasejs/7.13.1/firebase-app.js"></script>
     <!-- TODO: Add SDKs for Firebase products that you want to use
      https://firebase.google.com/docs/web/setup#available-libraries -->
-    <script src="https://www.gstatic.com/firebasejs/7.13.1/firebase-analytics.js "></script>
-    <script src="https://www.gstatic.com/firebasejs/7.13.1/firebase-auth.js "></script>
+    <script src="https://www.gstatic.com/firebasejs/7.13.1/firebase-analytics.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.13.1/firebase-auth.js"></script>
     <script>
         function checkLogin() {
             firebase.auth().onAuthStateChanged(function(user) {
                 if (user) {
                     // User is signed in.
-                    console.log("User is already logged in. ");
-                    document.getElementById("sign-in-link ").style.cssText = "display: none ";
-                    document.getElementById("sign-up-link ").style.cssText = "display: none ";
-                    document.getElementById("logout-link ").style.cssText = "display: flex ";
-                    document.getElementById("user-avatar ").style.cssText = "display: flex ";
-                    document.getElementById("username ").innerText = user.email;
+                    console.log("User is already logged in.");
+                    document.getElementById("sign-in-link").style.cssText = "display: none";
+                    document.getElementById("sign-up-link").style.cssText = "display: none";
+                    document.getElementById("logout-link").style.cssText = "display: flex";
+                    document.getElementById("user-avatar").style.cssText = "display: flex";
+                    document.getElementById("username").innerText = user.email;
                 } else {
-                    console.log("User is not logged in. ");
-                    document.getElementById("sign-in-link ").style.cssText = "display: flex ";
-                    document.getElementById("sign-up-link ").style.cssText = "display: flex ";
-                    document.getElementById("logout-link ").style.cssText = "display: none ";
-                    document.getElementById("user-avatar ").style.cssText = "display: none ";
+                    console.log("User is not logged in.");
+                    document.getElementById("sign-in-link").style.cssText = "display: flex";
+                    document.getElementById("sign-up-link").style.cssText = "display: flex";
+                    document.getElementById("logout-link").style.cssText = "display: none";
+                    document.getElementById("user-avatar").style.cssText = "display: none";
                 }
             });
         }
@@ -186,20 +185,22 @@
     <script>
         // Your web app's Firebase configuration
         var firebaseConfig = {
-            apiKey: "AIzaSyAhqCG0zNjGhYKGLeEQfXMcdzbb8oHrRyE ",
-            authDomain: "bakethecode.firebaseapp.com ",
-            databaseURL: "https://bakethecode.firebaseio.com ",
-            projectId: "bakethecode ",
-            storageBucket: "bakethecode.appspot.com ",
-            messagingSenderId: "500298729385 ",
-            appId: "1:500298729385:web:f976d794c09f415413a6b8 ",
-            measurementId: "G-2XX6K8LV35 "
+            apiKey: "AIzaSyAhqCG0zNjGhYKGLeEQfXMcdzbb8oHrRyE",
+            authDomain: "bakethecode.firebaseapp.com",
+            databaseURL: "https://bakethecode.firebaseio.com",
+            projectId: "bakethecode",
+            storageBucket: "bakethecode.appspot.com",
+            messagingSenderId: "500298729385",
+            appId: "1:500298729385:web:f976d794c09f415413a6b8",
+            measurementId: "G-2XX6K8LV35"
         };
         // Initialize Firebase
         firebase.initializeApp(firebaseConfig);
         firebase.analytics();
         checkLogin();
     </script>
+
+    <script src="javascript/index.js "></script>
 </body>
 
 </html>
