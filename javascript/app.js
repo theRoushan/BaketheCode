@@ -76,15 +76,28 @@ function openRegisterModal() {
 }
 
 
-function shakeModal() {
+function wrongCred() {
     $('#loginModal .modal-dialog').addClass('shake');
     $('.error').addClass('alert alert-danger').html("Invalid email/password combination");
     $('input[type="password"]').val('');
     setTimeout(function() {
         $('#loginModal .modal-dialog').removeClass('shake');
     }, 1000);
+    $("#login-form")[0].reset();
 
 }
+
+function userNotFound() {
+    $('#loginModal .modal-dialog').addClass('shake');
+    $('.error').addClass('alert alert-danger').html("User not Found.");
+    $('input[type="password"]').val('');
+    setTimeout(function() {
+        $('#loginModal .modal-dialog').removeClass('shake');
+    }, 1000);
+    $("#login-form")[0].reset();
+
+}
+
 
 /* ******************* */
 
@@ -115,19 +128,23 @@ function login() {
     userEmail = document.getElementById("login-email").value;
     userPass = document.getElementById("login-password").value;
     firebase.auth().signInWithEmailAndPassword(userEmail, userPass).then(function() {
-        if (firebase.auth().currentUser.isEmailVerified)
+        if (firebase.auth().currentUser.mailVerified)
             alert("Logged In");
         else {
             firebase.auth().signOut();
             alert("Complete verfication before Signup");
         }
     }).catch(function(error) {
-        shakeModal();
-        $("#login-form")[0].reset();
         // Handle Errors here.
         var errorCode = error.code;
         var errorMessage = error.message;
-        window.alert("Error : " + errorMessage);
+        if (errorCode == "auth/user-not-found") {
+            userNotFound();
+        } else if (errorCode == "auth/wrong-password") {
+            wrongCred();
+        }
+
+
 
         // ...
     });
