@@ -128,6 +128,10 @@
     animation-name: shake;
 }
 
+.hide {
+    visibility: hidden;
+}
+
 .blur-background {
     filter: blur(8px);
     -webkit-filter: blur(8px);

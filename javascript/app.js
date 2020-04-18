@@ -1,6 +1,6 @@
 var userEmail;
 var userPass;
-
+var isLogged;
 // Your web app's Firebase configuration
 var firebaseConfig = {
     apiKey: "AIzaSyAhqCG0zNjGhYKGLeEQfXMcdzbb8oHrRyE",
@@ -98,10 +98,13 @@ function userNotFound() {
 
 }
 
+function hideModal() {
+    location.replace(window.location.pathname);
+}
+
 
 /* ******************* */
-
-async function checkAuthentication() {
+function checkAuthentication() {
     firebase.auth().onAuthStateChanged(function(user) {
         console.log('checkAuthentication() loaded successfully.');
         if (user) {
@@ -128,11 +131,11 @@ function login() {
     userEmail = document.getElementById("login-email").value;
     userPass = document.getElementById("login-password").value;
     firebase.auth().signInWithEmailAndPassword(userEmail, userPass).then(function() {
-        if (firebase.auth().currentUser.mailVerified)
-            alert("Logged In");
-        else {
-            firebase.auth().signOut();
-            alert("Complete verfication before Signup");
+        if (firebase.auth().currentUser.emailVerified) {
+            hideModal();
+            isLogged = 1;
+        } else {
+            location.replace("user/user-profile.html");
         }
     }).catch(function(error) {
         // Handle Errors here.
@@ -161,11 +164,14 @@ function signup() {
             firebase.auth().currentUser.sendEmailVerification().then(function() {
                 // Email sent.
                 alert("Email verification has been sent to " + userEmail);
+                isLogged = 1;
+                location.replace("user/user-profile.html");
             }).catch(function(error) {
                 // An error happened.
             });
         }).catch(function(error) {
             // Handle Errors here.
+            $("#signup-form")[0].reset();
             var errorCode = error.code;
             var errorMessage = error.message;
             alert(errorMessage);
@@ -210,6 +216,11 @@ function resetPassword() {
 }
 
 function logout() {
-    firebase.auth().signOut();
-    alert("Logged Out. Successfully.");
+    firebase.auth().signOut().then(function() {
+        // Sign-out successful.
+        isLogged = 0;
+        alert("Logged Out. Successfully.");
+    }).catch(function(error) {
+        // An error happened.
+    });
 }

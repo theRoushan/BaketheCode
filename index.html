@@ -235,7 +235,7 @@
     <script src="javascript/app.js "></script>
     <script>
         firebase.auth().onAuthStateChanged(function(user) {
-            if (user) {
+            if (user || isLogged) {
                 // User is signed in.
                 console.log("User is already logged in.");
                 document.getElementById("sign-in-link").style.cssText = "display: none ";
