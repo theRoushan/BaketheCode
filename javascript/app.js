@@ -16,10 +16,9 @@ firebase.analytics();
 var userEmail;
 var userPass;
 const Auth = firebase.auth();
-const db = firebase.firestore();
 
 function redirect_to_homepage() {
-    console.log("home.page");
+    console.log("redirecting to homepage");
     location.replace("../index.html");
 };
 
@@ -105,32 +104,15 @@ function hideModal() {
     location.replace(window.location.pathname);
 }
 
-
-/* ******************* */
-//This function is used to check the onAuthState of user and returns the user token
-function checkAuthState() {
-    Auth.onAuthStateChanged(function(user) {
-        console.log('checkAuthentication() loaded successfully.');
-        if (user) {
-            // User is signed in.
-            console.log("user is alredy logged in");
-            return true;
-        } else {
-            // No user is signed in.
-            console.log("User is not logged in");
-            return false;
-        }
-    });
-    //returns the user token
-}
-
 function login() {
 
     userEmail = document.getElementById("login-email").value;
     userPass = document.getElementById("login-password").value;
     Auth.signInWithEmailAndPassword(userEmail, userPass).then(function() {
+        localStorage.setItem("isLogged", "yes");
         if (Auth.currentUser.emailVerified) {
             hideModal();
+            location.replace("../practice.html");
         } else {
             location.replace("user/profile.html");
         }
@@ -157,6 +139,7 @@ function signup() {
     if (userPass == confirm_userPass) {
         Auth.createUserWithEmailAndPassword(userEmail, userPass).then(function(user) {
             console.log("user account created" + user.email);
+            localStorage.setItem("isLogged", "yes");
         }).catch(function(error) {
             // Handle Errors here.
             $("#signup-form")[0].reset();
@@ -185,7 +168,8 @@ function logout() {
     Auth.signOut().then(function() {
         // Sign-out successful.
         console.log("Logged Out Successfully.");
-        location.replace("index.html")
+        location.replace("index.html");
+        localStorage.setItem("isLogged", "no");
     }).catch(function(error) {
         // An error happened.
         console.log("Logout Error" + error.message);

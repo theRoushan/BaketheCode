@@ -239,6 +239,8 @@
         firebase.auth().onAuthStateChanged(function(user) {
             if (user) {
                 // User is signed in.
+                localStorage.setItem("isLogged", "yes"); //saves the login stats for pass-reset access and profile.html
+
                 console.log("User is already logged in.");
                 document.getElementById("sign-in-link").style.cssText = "display: none ";
                 document.getElementById("sign-up-link").style.cssText = "display: none ";
@@ -269,6 +271,8 @@
                 }
 
             } else {
+                localStorage.setItem("isLogged", "no"); //saves the login stats for pass-reset access and profile.html
+
                 console.log("User is not logged in.");
                 document.getElementById("sign-in-link").style.cssText = "display: flex ";
                 document.getElementById("sign-up-link").style.cssText = "display: flex ";

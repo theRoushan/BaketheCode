@@ -745,13 +745,40 @@
         firebase.auth().onAuthStateChanged(function(user) {
             if (user) {
                 // User is signed in.
+                localStorage.setItem("isLogged", "yes"); //saves the login stats for pass-reset access and profile.html
+
                 console.log("User is already logged in.");
                 document.getElementById("sign-in-link").style.cssText = "display: none ";
                 document.getElementById("sign-up-link").style.cssText = "display: none ";
                 document.getElementById("logout-link").style.cssText = "display: flex ";
                 document.getElementById("user-avatar").style.cssText = "display: flex ";
                 document.getElementById("username").innerText = user.email;
+                if (!user.emailVerified) {
+                    Swal.fire({
+                        title: 'Please Verify Account',
+                        text: "You won't be able to access our services without verification.",
+                        icon: 'warning',
+                        showCancelButton: false,
+                        confirmButtonColor: '#3085d6',
+                        cancelButtonColor: '#d33',
+                        confirmButtonText: 'Send Verification Email',
+                        onClose: () => {
+                            logout();
+                        }
+                    }).then((result) => {
+                        if (result.value) {
+                            Swal.fire(
+                                'Email sent to ' + user.email,
+                                'Check your email inbox for verification Link',
+                                'success'
+                            )
+                        }
+                    })
+                }
+
             } else {
+                localStorage.setItem("isLogged", "no"); //saves the login stats for pass-reset access and profile.html
+
                 console.log("User is not logged in.");
                 document.getElementById("sign-in-link").style.cssText = "display: flex ";
                 document.getElementById("sign-up-link").style.cssText = "display: flex ";
@@ -760,6 +787,8 @@
             }
         });
     </script>
+    <!--adding sweetalert dialog-->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
 </body>
 
 </html>
