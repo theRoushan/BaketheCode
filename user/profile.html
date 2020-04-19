@@ -18,6 +18,20 @@
     <link href="assets/css/bootstrap.min.css" rel="stylesheet" />
     <link href="assets/css/material-bootstrap-wizard.css" rel="stylesheet" />
 
+    <script src="https://www.gstatic.com/firebasejs/7.13.1/firebase-app.js"></script>
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+    <script src="https://www.gstatic.com/firebasejs/7.13.1/firebase-analytics.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.13.1/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.13.1/firebase-auth.js"></script>
+    <script src="/javascript/app.js"></script>
+    <script>
+        //checks the auth status and if user is not logged then it send it back to homepage to prevent accessibility of this page for non-logged users
+        if (!checkAuthState()) {
+            redirect_to_homepage();
+        }
+    </script>
+
 </head>
 
 <body>
@@ -177,13 +191,7 @@
         <!--  big container -->
 
 </body>
-<script src="https://www.gstatic.com/firebasejs/7.13.1/firebase-app.js "></script>
-<!-- TODO: Add SDKs for Firebase products that you want to use
-     https://firebase.google.com/docs/web/setup#available-libraries -->
-<script src="https://www.gstatic.com/firebasejs/7.13.1/firebase-analytics.js "></script>
-<script src="https://www.gstatic.com/firebasejs/7.13.1/firebase-firestore.js "></script>
-<script src="https://www.gstatic.com/firebasejs/7.13.1/firebase-auth.js "></script>
-<script src="javascript/app.js "></script>
+
 <script>
     var firstName = document.getElementById("fname").value;
     var lastName = document.getElementById("lname").value;

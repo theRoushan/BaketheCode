@@ -19,7 +19,8 @@ const Auth = firebase.auth();
 const db = firebase.firestore();
 
 function redirect_to_homepage() {
-    location.replace("practice.html")
+    console.log("home.page");
+    location.replace("../index.html");
 };
 
 function mobileNav() {
@@ -106,19 +107,21 @@ function hideModal() {
 
 
 /* ******************* */
-function checkAuthentication() {
+//This function is used to check the onAuthState of user and returns the user token
+function checkAuthState() {
     Auth.onAuthStateChanged(function(user) {
         console.log('checkAuthentication() loaded successfully.');
         if (user) {
             // User is signed in.
-            redirect_to_homepage();
-
+            console.log("user is alredy logged in");
+            return true;
         } else {
             // No user is signed in.
-            alert("user is not logged in.");
-
+            console.log("User is not logged in");
+            return false;
         }
     });
+    //returns the user token
 }
 
 function login() {
@@ -137,8 +140,10 @@ function login() {
         var errorMessage = error.message;
         if (errorCode == "auth/user-not-found") {
             userNotFound();
+            console.log("User is not registered with us.");
         } else if (errorCode == "auth/wrong-password") {
             wrongCred();
+            console.log("Wrong Email/Password entered. Try Again!!");
         }
 
     });
@@ -149,48 +154,20 @@ function signup() {
     userEmail = document.getElementById("signup-email").value;
     userPass = document.getElementById("signup-password").value;
     confirm_userPass = document.getElementById("signup-password-confirmation").value;
-
     if (userPass == confirm_userPass) {
         Auth.createUserWithEmailAndPassword(userEmail, userPass).then(function(user) {
-            Auth.currentUser.sendEmailVerification().then(function() {
-                // Email sent.
-                alert("Email verification has been sent to " + userEmail);
-                location.replace("user/profile.html");
-            }).catch(function(error) {
-                // An error happened.
-            });
+            console.log("user account created" + user.email);
         }).catch(function(error) {
             // Handle Errors here.
             $("#signup-form")[0].reset();
             var errorCode = error.code;
             var errorMessage = error.message;
-            alert(errorMessage);
-            // ...
+            console.log(errorMessage)
         });
     } else
         alert("Both Password donot match. Try Again.")
-
 }
 
-function signInWithGoogle() {
-    Auth.signInWithPopup(provider).then(function(result) {
-        // This gives you a Google Access Token. You can use it to access the Google API.
-        var token = result.credential.accessToken;
-        // The signed-in user info.
-        var user = result.user;
-        console.log(user);
-        // ...
-    }).catch(function(error) {
-        // Handle Errors here.
-        var errorCode = error.code;
-        var errorMessage = error.message;
-        // The email of the user's account used.
-        var email = error.email;
-        // The firebase.auth.AuthCredential type that was used.
-        var credential = error.credential;
-        // ...
-    });
-}
 
 function resetPassword() {
     var emailAddress = document.getElementById("resetEmail").value;
@@ -207,8 +184,10 @@ function resetPassword() {
 function logout() {
     Auth.signOut().then(function() {
         // Sign-out successful.
-        alert("Logged Out. Successfully.");
+        console.log("Logged Out Successfully.");
+        location.replace("index.html")
     }).catch(function(error) {
         // An error happened.
+        console.log("Logout Error" + error.message);
     });
 }

@@ -69,7 +69,7 @@
         <ul id="authentication-state-links">
             <li id="sign-in-link"><a class="sign-in" data-toggle="modal" href="javascript:void(0)" onclick="openLoginModal();">Sign In</a></li>
             <li id="sign-up-link"><a class="sign-up" data-toggle="modal" href="javascript:void(0)" onclick="openRegisterModal();" style="background-color: #ff5349; color: white;">Sign Up</a></li>
-            <a href="" class="user-avatar-link">
+            <a href="user/profile.html" class="user-avatar-link">
                 <div id="user-avatar">
                     <img src="img/logo-red.png" alt="" id="avatar" height="32px" width="32px">
                     <h5 id="username">username</h5>
@@ -245,6 +245,29 @@
                 document.getElementById("logout-link").style.cssText = "display: flex ";
                 document.getElementById("user-avatar").style.cssText = "display: flex ";
                 document.getElementById("username").innerText = user.email;
+                if (!user.emailVerified) {
+                    Swal.fire({
+                        title: 'Please Verify Account',
+                        text: "You won't be able to access our services without verification.",
+                        icon: 'warning',
+                        showCancelButton: false,
+                        confirmButtonColor: '#3085d6',
+                        cancelButtonColor: '#d33',
+                        confirmButtonText: 'Send Verification Email',
+                        onClose: () => {
+                            logout();
+                        }
+                    }).then((result) => {
+                        if (result.value) {
+                            Swal.fire(
+                                'Email sent to ' + user.email,
+                                'Check your email inbox for verification Link',
+                                'success'
+                            )
+                        }
+                    })
+                }
+
             } else {
                 console.log("User is not logged in.");
                 document.getElementById("sign-in-link").style.cssText = "display: flex ";
@@ -254,6 +277,8 @@
             }
         });
     </script>
+    <!--adding sweetalert dialog-->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
 </body>
 
 </html>
