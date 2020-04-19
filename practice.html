@@ -432,6 +432,7 @@
                             logout();
                         }
                     }).then((result) => {
+                        verifyAccount();
                         if (result.value) {
                             Swal.fire(
                                 'Email sent to ' + user.email,

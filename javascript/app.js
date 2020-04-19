@@ -16,6 +16,7 @@ firebase.analytics();
 var userEmail;
 var userPass;
 const Auth = firebase.auth();
+const db = firebase.firestore();
 
 function redirect_to_homepage() {
     console.log("redirecting to homepage");
@@ -114,7 +115,7 @@ function login() {
             hideModal();
             location.replace("../practice.html");
         } else {
-            location.replace("user/profile.html");
+
         }
     }).catch(function(error) {
         // Handle Errors here.
@@ -149,6 +150,16 @@ function signup() {
         });
     } else
         alert("Both Password donot match. Try Again.")
+}
+
+function verifyAccount() {
+    Auth.currentUser.sendEmailVerification().then(function() {
+        // Email sent.
+        console.log("Email sent to " + Auth.currentUser);
+    }).catch(function(error) {
+        // An error happened.
+        console.log("Email not set. Error : " + error.code);
+    });
 }
 
 
