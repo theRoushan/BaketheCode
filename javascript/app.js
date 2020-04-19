@@ -162,6 +162,30 @@ function verifyAccount() {
     });
 }
 
+function sweeetAlertEmailVerification() {
+    Swal.fire({
+        title: 'Please Verify Account',
+        text: "You won't be able to access our services without verification.",
+        icon: 'warning',
+        showCancelButton: false,
+        confirmButtonColor: '#3085d6',
+        cancelButtonColor: '#d33',
+        confirmButtonText: 'Send Verification Email',
+        onClose: () => {
+            logout();
+        }
+    }).then((result) => {
+        verifyAccount();
+        if (result.value) {
+            Swal.fire(
+                'Email sent to ' + user.email,
+                'Check your email inbox for verification Link',
+                'success'
+            )
+        }
+    })
+}
+
 
 function resetPassword() {
     var emailAddress = document.getElementById("resetEmail").value;
