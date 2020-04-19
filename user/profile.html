@@ -43,14 +43,14 @@
                                     <ul>
                                         <li><a href="#about" data-toggle="tab">About</a></li>
                                         <li><a href="#account" data-toggle="tab">Account</a></li>
-                                        <li><a href="#address" data-toggle="tab">Address</a></li>
+                                        <li><a href="#college" data-toggle="tab">College Details</a></li>
                                     </ul>
                                 </div>
 
                                 <div class="tab-content">
                                     <div class="tab-pane" id="about">
                                         <div class="row">
-                                            <h4 class="info-text"> Let's start with the basic information (with validation)</h4>
+                                            <h4 class="info-text"> Let's start with the basic information</h4>
                                             <div class="col-sm-4 col-sm-offset-1">
                                                 <div class="picture-container">
                                                     <div class="picture">
@@ -128,20 +128,20 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="tab-pane" id="address">
+                                    <div class="tab-pane" id="college">
                                         <div class="row">
                                             <div class="col-sm-12">
-                                                <h4 class="info-text"> Are you living in a nice area? </h4>
+                                                <h4 class="info-text"> Enter Your College Details : </h4>
                                             </div>
                                             <div class="col-sm-7 col-sm-offset-1">
                                                 <div class="form-group label-floating">
-                                                    <label class="control-label">Street Name</label>
+                                                    <label class="control-label">College Name</label>
                                                     <input type="text" class="form-control">
                                                 </div>
                                             </div>
                                             <div class="col-sm-3">
                                                 <div class="form-group label-floating">
-                                                    <label class="control-label">Street Number</label>
+                                                    <label class="control-label">Locality</label>
                                                     <input type="text" class="form-control">
                                                 </div>
                                             </div>
@@ -163,7 +163,8 @@
 	                                                	<option value="Andorra"> Andorra </option>
 	                                                	<option value="Angola"> Angola </option>
 	                                                	<option value="Anguilla"> Anguilla </option>
-	                                                	<option value="Antarctica"> Antarctica </option>
+                                                        <option value="Antarctica"> Antarctica </option>
+                                                        <option value="India"> India </option>
 	                                                	<option value="...">...</option>
 	                                            	</select>
                                                 </div>
@@ -197,6 +198,7 @@
 <!-- TODO: Add SDKs for Firebase products that you want to use
      https://firebase.google.com/docs/web/setup#available-libraries -->
 <script src="https://www.gstatic.com/firebasejs/7.13.1/firebase-analytics.js "></script>
+<script src="https://www.gstatic.com/firebasejs/7.13.1/firebase-firestore.js "></script>
 <script src="https://www.gstatic.com/firebasejs/7.13.1/firebase-auth.js "></script>
 <script src="javascript/app.js "></script>
 <script>
