@@ -111,13 +111,7 @@ function checkAuthentication() {
         console.log('checkAuthentication() loaded successfully.');
         if (user) {
             // User is signed in.
-            var user = Auth.currentUser;
-
-            if (user != null) {
-                alert("User is logged in");
-                //redirects the user to haomepage if the user is already loggedin.
-                redirect_to_homepage();
-            }
+            redirect_to_homepage();
 
         } else {
             // No user is signed in.
