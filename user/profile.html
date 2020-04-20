@@ -99,8 +99,8 @@
 														<i class="material-icons">face</i>
 													</span>
                                                     <div class="form-group label-floating">
-                                                        <label class="control-label" id="fname">First Name <small>(required)</small></label>
-                                                        <input name="firstname" type="text" class="form-control">
+                                                        <label class="control-label">First Name <small>(required)</small></label>
+                                                        <input name="firstname" id="fname" type="text" class="form-control">
                                                     </div>
                                                 </div>
 
@@ -109,7 +109,7 @@
 														<i class="material-icons">record_voice_over</i>
 													</span>
                                                     <div class="form-group label-floating">
-                                                        <label class="control-label" id="lname">Last Name <small>(required)</small></label>
+                                                        <label class="control-label">Last Name <small>(required)</small></label>
                                                         <input name="lastname" type="text" class="form-control">
                                                     </div>
                                                 </div>
@@ -215,6 +215,7 @@
             var mobile = document.getElementById("mobile").value;
 
             function submitUsers() {
+                console.log("Button Clicked Successfully.");
                 firebase.auth().onAuthStateChanged(function(cred) {
                     db.collection("users").doc(cred.uid).set({
                         name: fullName,
