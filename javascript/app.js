@@ -149,7 +149,7 @@ function signup() {
                 .catch(function(error) {
                     console.error("Error adding document: ", error.code);
                 });
-            db.collection("users").doc(Auth.currentUser.uid).set({ username: username });
+            db.collection("users").doc(Auth.currentUser.uid).set({ username: username }, { merge: true });
         }).catch(function(error) {
             // Handle Errors here.
             $("signup-form")[0].reset();
