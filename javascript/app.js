@@ -13,8 +13,6 @@ var firebaseConfig = {
 firebase.initializeApp(firebaseConfig);
 firebase.analytics();
 /*Variables */
-var userEmail;
-var userPass;
 const Auth = firebase.auth();
 const db = firebase.firestore();
 
@@ -97,7 +95,7 @@ function userNotFound() {
     setTimeout(function() {
         $('#loginModal .modal-dialog').removeClass('shake');
     }, 1000);
-    $("#login-form")[0].reset();
+    $("login-form")[0].reset();
 
 }
 
@@ -107,8 +105,8 @@ function hideModal() {
 
 function login() {
 
-    userEmail = document.getElementById("login-email").value;
-    userPass = document.getElementById("login-password").value;
+    var userEmail = document.getElementById("login-email").value;
+    var userPass = document.getElementById("login-password").value;
     Auth.signInWithEmailAndPassword(userEmail, userPass).then(function() {
         localStorage.setItem("isLogged", "yes");
         if (Auth.currentUser.emailVerified) {
@@ -134,16 +132,27 @@ function login() {
 }
 
 function signup() {
-    userEmail = document.getElementById("signup-email").value;
-    userPass = document.getElementById("signup-password").value;
-    confirm_userPass = document.getElementById("signup-password-confirmation").value;
+    var userEmail = document.getElementById("signup-email").value;
+    var userPass = document.getElementById("signup-password").value;
+    var confirm_userPass = document.getElementById("signup-password-confirmation").value;
+    var username = document.getElementById("user-name").value;
+
     if (userPass == confirm_userPass) {
         Auth.createUserWithEmailAndPassword(userEmail, userPass).then(function(user) {
-            console.log("user account created" + user.email);
+            console.log("user account created" + Auth.currentUser.email);
             localStorage.setItem("isLogged", "yes");
+            Auth.currentUser.updateProfile({ displayName: username });
+            db.collection("username").doc(Auth.currentUser.uid).set({ username: username })
+                .then(function(docRef) {
+                    console.log("Document written with ID: ", docRef.id);
+                })
+                .catch(function(error) {
+                    console.error("Error adding document: ", error.code);
+                });
+            db.collection("users").doc(Auth.currentUser.uid).set({ username: username });
         }).catch(function(error) {
             // Handle Errors here.
-            $("#signup-form")[0].reset();
+            $("signup-form")[0].reset();
             var errorCode = error.code;
             var errorMessage = error.message;
             console.log(errorMessage)
@@ -155,7 +164,7 @@ function signup() {
 function verifyAccount() {
     Auth.currentUser.sendEmailVerification().then(function() {
         // Email sent.
-        console.log("Email sent to " + Auth.currentUser);
+        console.log("Email sent to " + Auth.currentUser.email);
     }).catch(function(error) {
         // An error happened.
         console.log("Email not set. Error : " + error.code);
@@ -165,23 +174,24 @@ function verifyAccount() {
 function sweeetAlertEmailVerification() {
     Swal.fire({
         title: 'Please Verify Account',
-        text: "You won't be able to access our services without verification.",
+        text: "You won't be able to access our services without verification. Please Login after verifying your account.",
         icon: 'warning',
         showCancelButton: false,
         confirmButtonColor: '#3085d6',
         cancelButtonColor: '#d33',
         confirmButtonText: 'Send Verification Email',
-        onClose: () => {
-            logout();
-        }
     }).then((result) => {
-        verifyAccount();
+
         if (result.value) {
-            Swal.fire(
-                'Email sent to ' + user.email,
-                'Check your email inbox for verification Link',
-                'success'
-            )
+            Swal.fire({
+                title: 'Email sent to ' + Auth.currentUser.email,
+                text: 'Check your email inbox for verification Link',
+                icon: 'success',
+                onClose: () => {
+                    verifyAccount();
+                    logout();
+                }
+            })
         }
     })
 }
@@ -203,7 +213,7 @@ function logout() {
     Auth.signOut().then(function() {
         // Sign-out successful.
         console.log("Logged Out Successfully.");
-        location.replace("index.html");
+        location.replace("../index.html");
         localStorage.setItem("isLogged", "no");
     }).catch(function(error) {
         // An error happened.
