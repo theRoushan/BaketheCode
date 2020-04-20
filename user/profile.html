@@ -100,7 +100,7 @@
 													</span>
                                                     <div class="form-group label-floating">
                                                         <label class="control-label">First Name <small>(required)</small></label>
-                                                        <input name="firstname" id="fname" type="text" class="form-control">
+                                                        <input name="firstname" type="text" class="form-control" id="fname">
                                                     </div>
                                                 </div>
 
@@ -110,7 +110,7 @@
 													</span>
                                                     <div class="form-group label-floating">
                                                         <label class="control-label">Last Name <small>(required)</small></label>
-                                                        <input name="lastname" type="text" class="form-control">
+                                                        <input name="lastname" type="text" class="form-control" id="lname">
                                                     </div>
                                                 </div>
                                             </div>
@@ -222,7 +222,7 @@
                         mobile: mobile,
                     }, {
                         merge: true
-                    })
+                    }).then
                 })
             }
         </script>
