@@ -76,7 +76,7 @@
                                 <div class="wizard-navigation">
                                     <ul>
                                         <li><a href="#about" data-toggle="tab">About</a></li>
-                                        <li><a href="#account" data-toggle="tab">Verify Account</a></li>
+                                        <li><a href="#qualification" data-toggle="tab">Latest Qualification</a></li>
                                         <li><a href="#college" data-toggle="tab">College Details</a></li>
                                     </ul>
                                 </div>
@@ -127,19 +127,32 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="tab-pane" id="account">
-                                        <h4 class="info-text"> Verify your Account </h4>
-                                        <p style="text-align:center;">Verify your account, else account will be deleted.</p>
+                                    <div class="tab-pane" id="qualification">
+                                        <h4 class="info-text"> Your Latest Qualification Details</h4>
+                                        <p style="text-align:center;">We willn't judge you by your Qualification</p>
                                         <div class="row">
-                                            <div class="col-sm-10 col-sm-offset-1">
-                                                <div class="col-sm-4">
-
+                                            <div class="col-sm-7 col-sm-offset-1">
+                                                <div class="form-group label-floating">
+                                                    <label class="control-label">Course</label>
+                                                    <input type="text" class="form-control" id="course">
                                                 </div>
-                                                <div class="col-sm-4">
-                                                    <input type='button' class='btn btn-next btn-fill btn-success btn-wd' name='verify-account' value='Send Verification Email' />
+                                            </div>
+                                            <div class="col-sm-3">
+                                                <div class="form-group label-floating">
+                                                    <label class="control-label">Name of Degree</label>
+                                                    <input type="text" class="form-control" id="degree">
                                                 </div>
-                                                <div class="col-sm-4">
-
+                                            </div>
+                                            <div class="col-sm-5 col-sm-offset-1">
+                                                <div class="form-group label-floating">
+                                                    <label class="control-label">Starting Year</label>
+                                                    <input type="text" class="form-control" id="starting-year">
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-5">
+                                                <div class="form-group label-floating">
+                                                    <label class="control-label">Graduating Year</label>
+                                                    <input type="text" class="form-control" id="graduating-year">
                                                 </div>
                                             </div>
                                         </div>
@@ -152,26 +165,39 @@
                                             <div class="col-sm-7 col-sm-offset-1">
                                                 <div class="form-group label-floating">
                                                     <label class="control-label">College Name</label>
-                                                    <input type="text" class="form-control">
+                                                    <input type="text" class="form-control" id="college-name">
                                                 </div>
                                             </div>
                                             <div class="col-sm-3">
                                                 <div class="form-group label-floating">
                                                     <label class="control-label">Locality</label>
-                                                    <input type="text" class="form-control">
+                                                    <input type="text" class="form-control" id="college-locality">
                                                 </div>
                                             </div>
                                             <div class="col-sm-5 col-sm-offset-1">
                                                 <div class="form-group label-floating">
                                                     <label class="control-label">City</label>
-                                                    <input type="text" class="form-control">
+                                                    <input type="text" class="form-control" id="college-city">
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-5">
+                                                <div class="form-group label-floating">
+                                                    <label class="control-label">State</label>
+                                                    <input type="text" class="form-control" id="college-state">
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-3 col-sm-offset-1">
+                                                <div class="form-group label-floating">
+                                                    <label class="control-label">Pincode</label>
+                                                    <input type="text" class="form-control" id="college-pincode">
                                                 </div>
                                             </div>
                                             <div class="col-sm-5">
                                                 <div class="form-group label-floating">
                                                     <label class="control-label">Country</label>
-                                                    <select name="country" class="form-control">
-														<option disabled="" selected=""></option>
+                                                    <select name="country" class="form-control" id="college-country">
+                                                        <option disabled="" selected=""></option>
+                                                        <option value="India"> India </option>
 	                                                	<option value="Afghanistan"> Afghanistan </option>
 	                                                	<option value="Albania"> Albania </option>
 	                                                	<option value="Algeria"> Algeria </option>
@@ -180,7 +206,6 @@
 	                                                	<option value="Angola"> Angola </option>
 	                                                	<option value="Anguilla"> Anguilla </option>
                                                         <option value="Antarctica"> Antarctica </option>
-                                                        <option value="India"> India </option>
 	                                                	<option value="...">...</option>
 	                                            	</select>
                                                 </div>
@@ -209,21 +234,45 @@
         </div>
         <!--  big container -->
         <script>
-            var firstName = document.getElementById("fname").value;
-            var lastName = document.getElementById("lname").value;
-            var fullName = firstName + " " + lastName;
-            var mobile = document.getElementById("mobile").value;
-
             function submitUsers() {
+                var firstName = document.getElementById("fname").value;
+                var lastName = document.getElementById("lname").value;
+                var fullName = firstName + " " + lastName;
+                var mobile = document.getElementById("mobile").value;
+                var course = document.getElementById("course").value;
+                var degree = document.getElementById("degree").value;
+                var startingYear = document.getElementById("starting-year").value;
+                var graduatingYear = document.getElementById("graduating-year").value;
+                var collegeName = document.getElementById("college-name").value;
+                var collegeLocality = document.getElementById("college-locality").value;
+                var collegeCity = document.getElementById("college-city").value;
+                var collegeState = document.getElementById("college-state").value;
+                var collegePinCode = document.getElementById("college-pincode").value;
+                var collegeCountry = document.getElementById("college-country").value;
                 console.log("Button Clicked Successfully.");
-                firebase.auth().onAuthStateChanged(function(cred) {
-                    db.collection("users").doc(cred.uid).set({
-                        name: fullName,
-                        mobile: mobile,
-                    }, {
-                        merge: true
-                    })
-                })
+                db.collection("users").doc(Auth.currentUser.uid).set({
+                    name: fullName,
+                    mobile: mobile,
+                    course: course,
+                    degree: degree,
+                    startingYear: startingYear,
+                    graduatingYear: graduatingYear,
+                    collegeName: collegeName,
+                    collegeLocality: collegeLocality,
+                    collegeCity: collegeCity,
+                    collegeState: collegeState,
+                    collegePinCode: collegePinCode,
+                    collegeCountry: collegeCountry
+                }, {
+                    merge: true
+                }).then(function() {
+                    Swal.fire({
+                        title: 'Data Saved Successfully',
+                        text: 'We have updated your Personal Information',
+                        icon: 'success',
+                    });
+                });
+
             }
         </script>
         <!--   Core JS Files   -->
@@ -234,6 +283,7 @@
         <script src="assets/js/material-bootstrap-wizard.js"></script>
         <!--  More information about jquery.validate here: http://jqueryvalidation.org/	 -->
         <script src="assets/js/jquery.validate.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
 </body>
 
 </html>
