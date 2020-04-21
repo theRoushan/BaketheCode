@@ -273,6 +273,8 @@
                 document.getElementById("logout-link").style.cssText = "display: flex ";
                 document.getElementById("user-avatar").style.cssText = "display: flex ";
                 document.getElementById("username").innerText = user.displayName;
+                document.getElementById("avatar").src = user.photoURL;
+
                 if (!user.emailVerified) {
                     sweeetAlertEmailVerification()
                 }

@@ -141,7 +141,7 @@ function signup() {
         Auth.createUserWithEmailAndPassword(userEmail, userPass).then(function(user) {
             console.log("user account created" + Auth.currentUser.email);
             localStorage.setItem("isLogged", "yes");
-            Auth.currentUser.updateProfile({ displayName: username });
+            Auth.currentUser.updateProfile({ displayName: username, photoURL: "https://pngimage.net/wp-content/uploads/2018/05/button-profile-png-7.png" });
             db.collection("username").doc(Auth.currentUser.uid).set({ username: username })
                 .then(function(docRef) {
                     console.log("Document written with ID: ", docRef.id);
