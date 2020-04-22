@@ -75,3 +75,49 @@ function getUserProfile() {
         });
     })
 }
+
+/*It is used to load the question from database to te frontend*/
+const questionList = document.querySelector(".main-content");
+const setupQuestion = (data) => {
+    let html = '';
+    let navbtn = `<div class="toggle-question">
+    <button class="backward">Previous</button>
+    <button class="forward">Next</button>
+</div>`;
+    data.forEach(doc => {
+        const question = doc.data();
+        console.log(question);
+        const problem = `<div class="problems hvr-grow">
+        <div class="properties">
+            <div class="level">
+                <label for="level">Level : </label>
+                <p class="level">${question.level}</p>
+            </div>
+            <div class="max-score">
+                <label for="max-score">Max Score : </label>
+                <p class="max-score">${question.maxScore}</p>
+            </div>
+            <div class="accuracy">
+                <label for="accuracy">Accuracy : </label>
+                <p class="accuracy">${question.accuracy}</p>
+            </div>
+        </div>
+        <div class="problem-name">
+            <h5>${question.name}</h5>
+        </div>
+        <div class="problem-statement">
+            <p>${question.statement}</p>
+        </div>
+        <button class="read-more">See More</button>
+    </div>`;
+        html += problem
+    });
+    questionList.innerHTML = html + navbtn;
+}
+
+function getQuestion() {
+    db.collection('questions').onSnapshot(snapshot => {
+        setupQuestion(snapshot.docs)
+    });
+
+}

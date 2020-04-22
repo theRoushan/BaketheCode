@@ -16,6 +16,7 @@ firebase.analytics();
 const Auth = firebase.auth();
 const db = firebase.firestore();
 
+
 function redirect_to_homepage() {
     console.log("redirecting to homepage");
     location.replace("../index.html");
