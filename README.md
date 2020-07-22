@@ -2,6 +2,7 @@
 ![Generic badge](https://img.shields.io/github/forks/theRoushan/BaketheCode)
 ![Generic badge](https://img.shields.io/github/stars/theRoushan/BaketheCode)
 ![Generic badge](https://img.shields.io/github/license/theRoushan/BaketheCode)
+![Generic badge](https://img.shields.io/github/commit/theRoushan/BaketheCode)
 # BaketheCode
 ![](img/small-logo.png)
 >>
