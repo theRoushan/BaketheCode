@@ -1,4 +1,4 @@
-[Generic badge](https://img.shields.io/github/issues/theRoushan/BaketheCode)
+![Generic badge](https://img.shields.io/github/issues/theRoushan/BaketheCode)
 # BaketheCode
 ![](img/small-logo.png)
 >>
