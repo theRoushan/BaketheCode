@@ -1,6 +1,6 @@
+[![Generic badge](https://img.shields.io/github/issues/theRoushan/BaketheCode)
 # BaketheCode
 ![](img/small-logo.png)
-[![Generic badge](https://img.shields.io/github/issues/theRoushan/BaketheCode)
 >>
 BaketheCode is an online Coding Platform which offers Students to earn money while learning and practicing Coding. This can be achieved through our regular online Coding Competitions and Challanges on daily Basis.
 
