@@ -12,6 +12,7 @@ To View the Website visit : https://bakethecode.me
 
 ## Author : The Roushan
 *The Roushan* is author of this coding website.
+Love to do coding and will collaborate if anyone wants.
 
 ## Copyright
 This website is copyright protected. Copying or Using this website for any Personal or Commercial use is an punishable offence.
